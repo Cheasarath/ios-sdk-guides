@@ -170,6 +170,7 @@
 		F2F0D7F91982984F00B14C39 /* 3. Customize (Advanced).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "3. Customize (Advanced).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F0D7FD19829B8400B14C39 /* SOSApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOSApplication.m; path = "Guides/customize-advanced/SOSApplication.m"; sourceTree = "<group>"; };
 		F2F0D7FF19829B8E00B14C39 /* SOSApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOSApplication.m; path = "Guides/customize-basic/SOSApplication.m"; sourceTree = "<group>"; };
+		F2F87FD419A7A27600D6D515 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +237,7 @@
 		F269BEF8198012E7001E69D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F2F87FD419A7A27600D6D515 /* libstdc++.6.dylib */,
 				F269BEF9198012E7001E69D7 /* Foundation.framework */,
 				F269BEFB198012E7001E69D7 /* CoreGraphics.framework */,
 				F269BEFD198012E7001E69D7 /* UIKit.framework */,

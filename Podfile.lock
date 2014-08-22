@@ -1,28 +1,42 @@
 PODS:
-  - EngineIOClient (0.3.1-binary):
-    - SocketRocket (= 0.3.1-beta2)
-  - GoInstant (0.3.1-binary):
-    - EngineIOClient (= 0.3.1-binary)
+  - AFNetworking (2.3.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+    - AFNetworking/UIKit
+  - AFNetworking/NSURLConnection (2.3.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.3.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.3.1)
+  - AFNetworking/Security (2.3.1)
+  - AFNetworking/Serialization (2.3.1)
+  - AFNetworking/UIKit (2.3.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
   - MBProgressHUD (0.8)
-  - OpenTok (2.2.0)
+  - OpenTok (2.3.0)
   - Raven (0.3.0)
-  - SocketRocket (0.3.1-beta2)
-  - SOS (0.4.9):
-    - GoInstant (= 0.3.1-binary)
+  - SOS (0.5.10):
+    - AFNetworking (= 2.3.1)
     - MBProgressHUD (= 0.8)
-    - OpenTok (= 2.2.0)
+    - OpenTok (= 2.3.0)
     - Raven (= 0.3.0)
 
 DEPENDENCIES:
-  - SOS (= 0.4.9)
+  - SOS (= 0.5.10)
 
 SPEC CHECKSUMS:
-  EngineIOClient: 79d46af27a63e9e214c907d5721dc8c110ec12e7
-  GoInstant: befc667789159c41678b7f68cd1128529f522c05
+  AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
   MBProgressHUD: c356980b0cd097f19acec959b49dca5eb8ec31be
-  OpenTok: df627366169eed06c06601fa8c42b097c2bbdbff
+  OpenTok: ff4af16dd3e6bb8c0ef2313ba61b2cd1de2ff734
   Raven: ae464df6d875b64d2b2c7ccfad28622974507b0a
-  SocketRocket: 79a68ae186063c65e1fe6f638b1ae2927aa5f304
-  SOS: 77cb3cbd861f8cde3ae8922498ea19a268c653aa
+  SOS: eb40c8ffac10285ea30e3f773e19ea58b129c90c
 
 COCOAPODS: 0.33.1
