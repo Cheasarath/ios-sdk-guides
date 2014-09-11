@@ -23,20 +23,20 @@ PODS:
   - MBProgressHUD (0.8)
   - OpenTok (2.3.0)
   - Raven (0.3.0)
-  - SOS (0.5.10):
+  - SOS (0.5.11):
     - AFNetworking (= 2.3.1)
     - MBProgressHUD (= 0.8)
     - OpenTok (= 2.3.0)
     - Raven (= 0.3.0)
 
 DEPENDENCIES:
-  - SOS (= 0.5.10)
+  - SOS (= 0.5.11)
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
   MBProgressHUD: c356980b0cd097f19acec959b49dca5eb8ec31be
   OpenTok: ff4af16dd3e6bb8c0ef2313ba61b2cd1de2ff734
   Raven: ae464df6d875b64d2b2c7ccfad28622974507b0a
-  SOS: eb40c8ffac10285ea30e3f773e19ea58b129c90c
+  SOS: 3984f3df4fa8182365ca6a9bca1784777860eae4
 
 COCOAPODS: 0.33.1
