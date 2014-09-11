@@ -2,11 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Account</key>
-	<string>MyAccount</string>
-	<key>Application</key>
-	<string>MyApplication</string>
+	<key>Salesforce Organization ID</key>
+	<string>afakeorgid-1234</string>
 	<key>Email</key>
-	<string>test@example.com</string>
+	<string>lauren@example.com</string>
+	<key>Live Agent Pod</key>
+	<string>la-1.d.salesforce.com</string>
+	<key>Deployment ID</key>
+	<string>afakedeployment</string>
 </dict>
 </plist>

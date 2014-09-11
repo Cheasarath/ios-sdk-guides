@@ -23,11 +23,9 @@ Simply clone this project and run `pod install`
 In the SOSExamples.xcworkspace you will see a `SOSSettings.plist` file in the explorer.
 This contains the information you will need to successfully start an SOS session.
 
-This settings file contains several fields.
+This settings file contains several fields. These fields correspond to information retrieved in your org.
 
-* Account: `Corresponds to the SOS account you have been provided`
-* Application: `Corresponds to the SOS application you have been provided`
-* Email: `This must match a valid customer record in your Salesforce.com org.`
+Please see [this](http://sos.goinstant.com/pilot/documentation/docs/guides/User%20Guide%201.%20Service%20Cloud%20Org%20Configuration.html) page on configuring your org for SOS to retrieve these values.
 
 __NOTE__: By default this settings file contains placeholder values.  If the credentials here are not valid when starting a session, you will see an error.
 
