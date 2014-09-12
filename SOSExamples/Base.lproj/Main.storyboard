@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YA0-dY-wNF" customClass="SOSButton">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YA0-dY-wNF" customClass="SOSButton">
                                 <rect key="frame" x="48" y="249" width="225" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
@@ -34,8 +34,10 @@
                         <constraints>
                             <constraint firstItem="tzM-M3-1BP" firstAttribute="top" secondItem="hsk-5k-SnL" secondAttribute="bottom" id="8YN-Wj-Xyq"/>
                             <constraint firstItem="hsk-5k-SnL" firstAttribute="top" secondItem="zrB-t8-3BF" secondAttribute="top" id="QhN-N1-aoX"/>
+                            <constraint firstAttribute="centerX" secondItem="YA0-dY-wNF" secondAttribute="centerX" id="VaW-7k-9I1"/>
                             <constraint firstAttribute="trailing" secondItem="hsk-5k-SnL" secondAttribute="trailing" id="c0L-uJ-NXS"/>
                             <constraint firstItem="hsk-5k-SnL" firstAttribute="leading" secondItem="zrB-t8-3BF" secondAttribute="leading" id="dTb-vh-RoB"/>
+                            <constraint firstAttribute="centerY" secondItem="YA0-dY-wNF" secondAttribute="centerY" id="gsq-GH-K7H"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sJu-FU-ODA">
