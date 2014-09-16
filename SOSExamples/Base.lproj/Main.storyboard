@@ -178,7 +178,7 @@
         <!--Profile-->
         <scene sceneID="KVv-Za-scX">
             <objects>
-                <viewController id="GHn-K6-3F1" userLabel="Profile" sceneMemberID="viewController">
+                <viewController id="GHn-K6-3F1" userLabel="Profile" customClass="ProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nxF-md-AJZ"/>
                         <viewControllerLayoutGuide type="bottom" id="cfe-US-lIA"/>
@@ -210,6 +210,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="backgroundColor" red="0.16862745579999999" green="0.23921570180000001" blue="0.31764706970000001" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstItem="LBR-m9-UXt" firstAttribute="leading" secondItem="q0S-i1-zGl" secondAttribute="leading" id="7KH-su-fb1"/>
                                     <constraint firstAttribute="trailing" secondItem="LBR-m9-UXt" secondAttribute="trailing" id="KRq-yA-7V5"/>
@@ -239,6 +240,11 @@
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1032"/>
+                    <connections>
+                        <outlet property="profileView" destination="LBR-m9-UXt" id="sku-Xp-ZWo"/>
+                        <outlet property="scrollView" destination="q0S-i1-zGl" id="0wr-ao-dYy"/>
+                        <outlet property="view" destination="Bis-tD-fl0" id="BbY-u7-YDD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XNP-VN-Ewt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

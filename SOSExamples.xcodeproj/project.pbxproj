@@ -36,6 +36,9 @@
 		F269BF51198014A1001E69D7 /* user_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF3F198014A1001E69D7 /* user_icon.png */; };
 		F269BF52198014A1001E69D7 /* user_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF40198014A1001E69D7 /* user_icon@2x.png */; };
 		F269BF5619802C74001E69D7 /* ContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F269BF5519802C74001E69D7 /* ContactsTableViewController.m */; };
+		F277835619C8CF2800EC775A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F277835519C8CF2800EC775A /* ProfileViewController.m */; };
+		F277835719C8CF2800EC775A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F277835519C8CF2800EC775A /* ProfileViewController.m */; };
+		F277835819C8CF2800EC775A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F277835519C8CF2800EC775A /* ProfileViewController.m */; };
 		F2B1679A19816D3F00A91FC4 /* SOSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B1679919816D3F00A91FC4 /* SOSButton.m */; };
 		F2B167A019817A2500A91FC4 /* SOSApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B1679F19817A2500A91FC4 /* SOSApplication.m */; };
 		F2B167A41981934300A91FC4 /* SOSSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2B167A31981934300A91FC4 /* SOSSettings.plist */; };
@@ -155,6 +158,8 @@
 		F269BF40198014A1001E69D7 /* user_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "user_icon@2x.png"; path = "Assets/user_icon@2x.png"; sourceTree = "<group>"; };
 		F269BF5419802C74001E69D7 /* ContactsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsTableViewController.h; sourceTree = "<group>"; };
 		F269BF5519802C74001E69D7 /* ContactsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsTableViewController.m; sourceTree = "<group>"; };
+		F277835419C8CF2800EC775A /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		F277835519C8CF2800EC775A /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		F2B1679819816D3F00A91FC4 /* SOSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOSButton.h; path = SOS/SOSButton.h; sourceTree = "<group>"; };
 		F2B1679919816D3F00A91FC4 /* SOSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOSButton.m; path = SOS/SOSButton.m; sourceTree = "<group>"; };
 		F2B1679B19816D8C00A91FC4 /* SOSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOSApplication.h; sourceTree = "<group>"; };
@@ -306,6 +311,8 @@
 			children = (
 				F269BF5419802C74001E69D7 /* ContactsTableViewController.h */,
 				F269BF5519802C74001E69D7 /* ContactsTableViewController.m */,
+				F277835419C8CF2800EC775A /* ProfileViewController.h */,
+				F277835519C8CF2800EC775A /* ProfileViewController.m */,
 			);
 			name = "Custom View Controllers";
 			sourceTree = "<group>";
@@ -643,6 +650,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2C0F19F1982F62F00A2D678 /* SOSExampleNotification.m in Sources */,
+				F277835619C8CF2800EC775A /* ProfileViewController.m in Sources */,
 				F269BF10198012E7001E69D7 /* ViewController.m in Sources */,
 				F269BF0A198012E7001E69D7 /* AppDelegate.m in Sources */,
 				F2B1679A19816D3F00A91FC4 /* SOSButton.m in Sources */,
@@ -658,6 +666,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2C0F1A01982F62F00A2D678 /* SOSExampleNotification.m in Sources */,
+				F277835719C8CF2800EC775A /* ProfileViewController.m in Sources */,
 				F2F0D7A8198295EF00B14C39 /* ViewController.m in Sources */,
 				F2F0D7A9198295EF00B14C39 /* AppDelegate.m in Sources */,
 				F2F0D7AA198295EF00B14C39 /* SOSButton.m in Sources */,
@@ -673,6 +682,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2C0F1A11982F62F00A2D678 /* SOSExampleNotification.m in Sources */,
+				F277835819C8CF2800EC775A /* ProfileViewController.m in Sources */,
 				F2F0D7D31982984F00B14C39 /* ViewController.m in Sources */,
 				F2F0D7D41982984F00B14C39 /* AppDelegate.m in Sources */,
 				F2F0D7D51982984F00B14C39 /* SOSButton.m in Sources */,
