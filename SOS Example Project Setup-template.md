@@ -7,6 +7,7 @@ This guide assumes you have done the following from the __Prerequisites__ sectio
 1. Cocoapods is installed.
 2. The SOS [pods-specs-public](https://github.com/goinstant/pods-specs-public) repository as been added to your cocoapods list of repositories.
 3. You have valid credentials for a Salesforce.com org, as well as the SOS account/application information that was provided to you during the setup process.
+4. You are using [Xcode 6](https://developer.apple.com/xcode/downloads/) or higher.
 
 ## Getting Started
 

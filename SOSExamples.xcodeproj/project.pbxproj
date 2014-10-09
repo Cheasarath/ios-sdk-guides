@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		016221D219E6F0E30090DDFB /* LaunchImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016221D119E6F0E30090DDFB /* LaunchImage.xib */; };
+		01A6DDCD19E6D6C600CC74E9 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A6DDCC19E6D6C600CC74E9 /* ProfileViewController.m */; };
 		ACD70208352944D196D8F349 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C40693083AD2430F91D41270 /* libPods.a */; };
 		F269BEFA198012E7001E69D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F269BEF9198012E7001E69D7 /* Foundation.framework */; };
 		F269BEFC198012E7001E69D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F269BEFB198012E7001E69D7 /* CoreGraphics.framework */; };
@@ -118,6 +120,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		016221D119E6F0E30090DDFB /* LaunchImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchImage.xib; sourceTree = "<group>"; };
+		01A6DDCB19E6D6C600CC74E9 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		01A6DDCC19E6D6C600CC74E9 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		315D1D1D10354112B24B0CD2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C40693083AD2430F91D41270 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F269BEF6198012E7001E69D7 /* 1. Integrate SOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "1. Integrate SOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,6 +264,7 @@
 				F269BF0E198012E7001E69D7 /* ViewController.h */,
 				F269BF0F198012E7001E69D7 /* ViewController.m */,
 				F269BF11198012E7001E69D7 /* Images.xcassets */,
+				016221D119E6F0E30090DDFB /* LaunchImage.xib */,
 				F269BF0B198012E7001E69D7 /* Main.storyboard */,
 			);
 			name = Common;
@@ -306,6 +312,8 @@
 			children = (
 				F269BF5419802C74001E69D7 /* ContactsTableViewController.h */,
 				F269BF5519802C74001E69D7 /* ContactsTableViewController.m */,
+				01A6DDCB19E6D6C600CC74E9 /* ProfileViewController.h */,
+				01A6DDCC19E6D6C600CC74E9 /* ProfileViewController.m */,
 			);
 			name = "Custom View Controllers";
 			sourceTree = "<group>";
@@ -462,6 +470,7 @@
 				F269BF4E198014A1001E69D7 /* sos_button_large@2x.png in Resources */,
 				F269BF4B198014A1001E69D7 /* Profile.png in Resources */,
 				F269BF47198014A1001E69D7 /* contact_profile.png in Resources */,
+				016221D219E6F0E30090DDFB /* LaunchImage.xib in Resources */,
 				F269BF46198014A1001E69D7 /* contact_icon@2x.png in Resources */,
 				F269BF44198014A1001E69D7 /* compose_icon@2x.png in Resources */,
 				F2C0F1911982EA3500A2D678 /* SOSExampleAlert.xib in Resources */,
@@ -643,6 +652,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2C0F19F1982F62F00A2D678 /* SOSExampleNotification.m in Sources */,
+				01A6DDCD19E6D6C600CC74E9 /* ProfileViewController.m in Sources */,
 				F269BF10198012E7001E69D7 /* ViewController.m in Sources */,
 				F269BF0A198012E7001E69D7 /* AppDelegate.m in Sources */,
 				F2B1679A19816D3F00A91FC4 /* SOSButton.m in Sources */,
@@ -781,13 +791,12 @@
 			buildSettings = {
 				ARCHS = armv7;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SOSExamples/SOSExamples-Prefix.pch";
 				INFOPLIST_FILE = "SOSExamples/SOSExamples-Info.plist";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -798,13 +807,12 @@
 			buildSettings = {
 				ARCHS = armv7;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SOSExamples/SOSExamples-Prefix.pch";
 				INFOPLIST_FILE = "SOSExamples/SOSExamples-Info.plist";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
