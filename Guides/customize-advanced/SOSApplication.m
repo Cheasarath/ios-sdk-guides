@@ -205,10 +205,6 @@
   [_notification hideAfterDelay:1.f];
 }
 
-- (void)sosDidReConnect:(SOSSessionManager *)sos {
-
-}
-
 #pragma mark - GestureRecognizers
 
 - (void)handleNotificationTouch:(UITapGestureRecognizer *)recognizer {
