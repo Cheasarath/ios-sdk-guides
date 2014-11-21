@@ -36,5 +36,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblMessage;
 
 - (void)showWithMessage:(NSString *)message;
+- (void)hideAfterDelay:(NSTimeInterval)delay;
 
 @end
