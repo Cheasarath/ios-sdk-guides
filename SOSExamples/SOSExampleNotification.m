@@ -59,4 +59,12 @@
   [self setHidden:NO];
 }
 
+- (void)hideAfterDelay:(NSTimeInterval)delay {
+  [self performSelector:@selector(hide) withObject:nil afterDelay:delay];
+}
+
+- (void)hide {
+  [self setHidden:YES];
+}
+
 @end

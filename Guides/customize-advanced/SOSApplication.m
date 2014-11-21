@@ -192,24 +192,6 @@
 
 #pragma mark - SOSDelegate Handlers
 
-/**
- *  Intercepts didError delegate messages
- *
- *  @param sos   SOSSessionManager instance which fired the message
- *  @param error The NSError which was captured.
- */
-- (void)sos:(SOSSessionManager *)sos didError:(NSError *)error {
-  [_alert showWithMessage:[error localizedDescription] completion:nil];
-}
-
-- (void)sos:(SOSSessionManager *)sos stateDidChange:(SOSSessionState)current previous:(SOSSessionState)previous {
-  // If the session has stopped or is fully active, hide the notification
-  if (current == SOSSessionStateInactive || current == SOSSessionStateActive) {
-    [_notification setHidden:YES];
-    return;
-  }
-}
-
 - (void)sosDidStart:(SOSSessionManager *)sos {
   [_notification showWithMessage:@"Initializing.."];
 }
@@ -218,8 +200,9 @@
   [_notification showWithMessage:@"Waiting for an Agent.."];
 }
 
-- (void)sosDidStop:(SOSSessionManager *)sos {
-  [_alert showWithMessage:@"SOS Session has ended." completion:nil];
+- (void)sosAgentJoined:(SOSSessionManager *)sos {
+  [_notification showWithMessage:@"Agent has joined"];
+  [_notification hideAfterDelay:1.f];
 }
 
 - (void)sosDidReConnect:(SOSSessionManager *)sos {
