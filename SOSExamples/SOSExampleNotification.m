@@ -50,7 +50,10 @@
 }
 
 - (void)showWithMessage:(NSString *)message {
-  [self setCenter:CGPointMake(160, 90)];
+  CGSize screenSize = [UIScreen mainScreen].bounds.size;
+  CGSize notificationSize = self.bounds.size;
+
+  [self setCenter:CGPointMake(screenSize.width/2, screenSize.height - notificationSize.height/2)];
   [_lblMessage setText:message];
   [_activity startAnimating];
   [self setHidden:NO];

@@ -33,6 +33,45 @@
 #import "SOSExampleAlert.h"
 #import "SOSExampleNotification.h"
 
+#import <SOS/SOS.h>
+
+@interface MySOSDelegate: NSObject<SOSDelegate>
+- (void)startSession;
+
+@property MyCustomNotificationClass *myNotification;
+@end
+
+@implementation MySOSDelegate
+
+- (void)startSession {
+  SOSOptions *myOpts = [SOSOptions optionsWithEmail:@"My Email"
+                                       liveAgentPod:@"Live Agent Endpoint"
+                                              orgId:@"My Org ID"
+                                       deploymentId:@"My Deployment ID"];
+
+  // Extend the retry timer to 60 seconds.
+  [myOpts setSessionRetryTime:60.f];
+
+  // Add your class to the delegates so you can listen to SOS delegate messages
+  [[SOSSessionManager sharedInstance] addDelegate:self];
+  [[SOSSessionManager sharedInstance] startSessionWithOptions:myOpts];
+}
+
+- (void)sosDidStart:(SOSSessionManager *)sos {
+  [_myNotification showWithMessage:@"Initializing.."];
+}
+
+- (void)sosDidConnect:(SOSSessionManager *)sos {
+  [_myNotification showWithMessage:@"Waiting for an Agent.."];
+}
+
+- (void)sosAgentJoined:(SOSSessionManager *)sos {
+  [_myNotification showWithMessage:@"Agent now joining..."]
+  [_myNotifcation hideWithDelay:1.f];
+}
+
+@end
+
 @interface MyContainerWindow : UIWindow
 @end
 
@@ -72,10 +111,8 @@
 /**
  * To fully customize the look and feel of SOS, we need to diable and replace the default UI behavior provided by the framework.
  * We will do this in several steps:
- *  1. Disable UIAlerts, Gestures, ProgressHUD. This means that there will be no UI prompts from the framework.
- *     If left in this state, pressing the SOS button will jump immediately into the queue, and the user will not see a progress hud.
- *  2. Replace the UIAlerts which served customer prompts with our own custom component.
- *  3. Replace the progress hud, with a notification bar which allows the user to continue using their app, but with updates about
+ *  1. Gestures and ProgressHUD. This means that there will be no UI prompts from the framework. UIAlerts will still continue to fire.
+ *  2. Replace the progress hud, with a notification bar which allows the user to continue using their app, but with updates about
  *     The current status of the session.
  */
 - (void)setup {
@@ -85,14 +122,20 @@
   SOSUIComponents *components = [sos uiComponents];
 
   // Step 1. Disable default SOS UI behavior. NOTE: This does not extend to the agent window displayed during a session.
-  [components setAlertsEnabled:NO]; // Disable alerts. Alerts that would have promted the user will now assume a response of YES
   [components setProgressHudEnabled:NO]; // The progress hud will no longer be displayed.
+
+  [components setAlertTitle:@"Example 3."]; // Sets the title used for UI Alerts.
+  [components setConnectMessage:@"This is the alert customers see when starting SOS"];
+  [components setDisconnectMessage:@"This is the alert customers see when a user attempts to end a session"];
+  [components setAgentDisconnectMessage:@"This is the alert customers see when the agent ends the session"];
+
+  [components setConnectionRetryMessage:@"The user has been waiting in the queue, they will be asked to continue/quit here"];
+  [components setConnectionTimedOutMessage:@"The session has gone unanswered too long, it has been automatically ended"];
 
   // Step 2. We want to have a view that we can use and will live for the lifetime of the application. This view will hold our custom UI components.
   //         This lets us manage UI components without having to manage them in a specific view controller.
   CGRect frame = CGRectMake(0,0,[UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
   _container = [[MyContainerWindow alloc] initWithFrame:frame];
-  _alert = [[[NSBundle mainBundle] loadNibNamed:@"SOSExampleAlert" owner:self options:nil] objectAtIndex:0];
   _notification = [[[NSBundle mainBundle] loadNibNamed:@"SOSExampleNotification" owner:self options:nil] objectAtIndex:0];
 
   [_container setWindowLevel:UIWindowLevelAlert - 1000.f];
@@ -100,10 +143,8 @@
   [_container addSubview:_alert];
   [_container setHidden:NO];
 
-  [_alert setHidden:YES];
   [_notification setHidden:YES];
   [_notification setUserInteractionEnabled:YES];
-  [_alert setUserInteractionEnabled:YES];
 
   UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleNotificationTouch:)];
   [_notification addGestureRecognizer:tap];
@@ -140,22 +181,13 @@
   }
 
   SOSOptions *opts = [self getSessionOptions];
-  [_alert showWithMessage:@"Do you wish to start an SOS Session?" completion:^(BOOL ok) {
-    if (ok) {
-      // Instead of handling the completion block here we can opt to allow the delegate handler manage errors for us.
-      [sos startSessionWithOptions:opts];
-    }
-  }];
+  [sos startSessionWithOptions:opts];
 }
 
 - (void)stopSession {
   // Ask the user if they want to stop
   SOSSessionManager *sos = [SOSSessionManager sharedInstance];
-  [_alert showWithMessage:@"Do you wish to cancel the SOS Session?" completion:^(BOOL ok) {
-    if (ok) {
-      [sos stopSession];
-    }
-  }];
+  [sos stopSession];
 }
 
 #pragma mark - SOSDelegate Handlers
@@ -188,6 +220,10 @@
 
 - (void)sosDidStop:(SOSSessionManager *)sos {
   [_alert showWithMessage:@"SOS Session has ended." completion:nil];
+}
+
+- (void)sosDidReConnect:(SOSSessionManager *)sos {
+
 }
 
 #pragma mark - GestureRecognizers
