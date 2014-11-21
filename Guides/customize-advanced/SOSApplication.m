@@ -33,6 +33,45 @@
 #import "SOSExampleAlert.h"
 #import "SOSExampleNotification.h"
 
+#import <SOS/SOS.h>
+
+@interface MySOSDelegate: NSObject<SOSDelegate>
+- (void)startSession;
+
+@property MyCustomNotificationClass *myNotification;
+@end
+
+@implementation MySOSDelegate
+
+- (void)startSession {
+  SOSOptions *myOpts = [SOSOptions optionsWithEmail:@"My Email"
+                                       liveAgentPod:@"Live Agent Endpoint"
+                                              orgId:@"My Org ID"
+                                       deploymentId:@"My Deployment ID"];
+
+  // Extend the retry timer to 60 seconds.
+  [myOpts setSessionRetryTime:60.f];
+
+  // Add your class to the delegates so you can listen to SOS delegate messages
+  [[SOSSessionManager sharedInstance] addDelegate:self];
+  [[SOSSessionManager sharedInstance] startSessionWithOptions:myOpts];
+}
+
+- (void)sosDidStart:(SOSSessionManager *)sos {
+  [_myNotification showWithMessage:@"Initializing.."];
+}
+
+- (void)sosDidConnect:(SOSSessionManager *)sos {
+  [_myNotification showWithMessage:@"Waiting for an Agent.."];
+}
+
+- (void)sosAgentJoined:(SOSSessionManager *)sos {
+  [_myNotification showWithMessage:@"Agent now joining..."]
+  [_myNotifcation hideWithDelay:1.f];
+}
+
+@end
+
 @interface MyContainerWindow : UIWindow
 @end
 
@@ -181,6 +220,10 @@
 
 - (void)sosDidStop:(SOSSessionManager *)sos {
   [_alert showWithMessage:@"SOS Session has ended." completion:nil];
+}
+
+- (void)sosDidReConnect:(SOSSessionManager *)sos {
+
 }
 
 #pragma mark - GestureRecognizers

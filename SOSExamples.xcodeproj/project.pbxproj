@@ -41,6 +41,8 @@
 		F2B1679A19816D3F00A91FC4 /* SOSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B1679919816D3F00A91FC4 /* SOSButton.m */; };
 		F2B167A019817A2500A91FC4 /* SOSApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B1679F19817A2500A91FC4 /* SOSApplication.m */; };
 		F2B167A41981934300A91FC4 /* SOSSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2B167A31981934300A91FC4 /* SOSSettings.plist */; };
+		F2BA14D51A1F86DE00666D98 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A6DDCC19E6D6C600CC74E9 /* ProfileViewController.m */; };
+		F2BA14D61A1F86DE00666D98 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A6DDCC19E6D6C600CC74E9 /* ProfileViewController.m */; };
 		F2C0F1911982EA3500A2D678 /* SOSExampleAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C0F1901982EA3500A2D678 /* SOSExampleAlert.xib */; };
 		F2C0F1921982EA3500A2D678 /* SOSExampleAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C0F1901982EA3500A2D678 /* SOSExampleAlert.xib */; };
 		F2C0F1931982EA3500A2D678 /* SOSExampleAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C0F1901982EA3500A2D678 /* SOSExampleAlert.xib */; };
@@ -678,6 +680,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2C0F1A01982F62F00A2D678 /* SOSExampleNotification.m in Sources */,
+				F2BA14D51A1F86DE00666D98 /* ProfileViewController.m in Sources */,
 				F2F0D7A8198295EF00B14C39 /* ViewController.m in Sources */,
 				F2F0D7A9198295EF00B14C39 /* AppDelegate.m in Sources */,
 				F2F0D7AA198295EF00B14C39 /* SOSButton.m in Sources */,
@@ -693,6 +696,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2C0F1A11982F62F00A2D678 /* SOSExampleNotification.m in Sources */,
+				F2BA14D61A1F86DE00666D98 /* ProfileViewController.m in Sources */,
 				F2F0D7D31982984F00B14C39 /* ViewController.m in Sources */,
 				F2F0D7D41982984F00B14C39 /* AppDelegate.m in Sources */,
 				F2F0D7D51982984F00B14C39 /* SOSButton.m in Sources */,
