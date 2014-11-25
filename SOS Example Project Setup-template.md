@@ -55,6 +55,12 @@ Each example will install a separate application on your device, so you can have
 
 ## The Examples
 
+### Common Elements
+
+##### Field Masking
+
+Field masking is implemented in the project in the "Compose" view and is handled entirely in the storyboard. The text field adjacent to the "To:" label is given a custom class of `SOSMaskedTextField` and will display the field masking functionality once in an SOS session.
+
 ### 1. Integrate SOS
 
 Code can be found in the group:

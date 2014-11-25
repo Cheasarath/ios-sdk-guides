@@ -19,29 +19,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="checker_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="hsk-5k-SnL">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YA0-dY-wNF" customClass="SOSButton">
-                                <rect key="frame" x="48" y="249" width="225" height="69"/>
+                                <rect key="frame" x="188" y="265" width="225" height="69"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" image="sos_button_large.png"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.61568627450000002" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                         <accessibility key="accessibilityConfiguration">
                             <accessibilityTraits key="traits" none="YES" image="YES"/>
                         </accessibility>
                         <constraints>
-                            <constraint firstItem="tzM-M3-1BP" firstAttribute="top" secondItem="hsk-5k-SnL" secondAttribute="bottom" id="80i-OS-sCd"/>
                             <constraint firstAttribute="centerY" secondItem="YA0-dY-wNF" secondAttribute="centerY" id="GPE-HW-shb"/>
                             <constraint firstAttribute="centerX" secondItem="YA0-dY-wNF" secondAttribute="centerX" id="RqK-VZ-CTc"/>
-                            <constraint firstAttribute="trailing" secondItem="hsk-5k-SnL" secondAttribute="trailing" id="U2o-cU-uCF"/>
-                            <constraint firstItem="hsk-5k-SnL" firstAttribute="leading" secondItem="zrB-t8-3BF" secondAttribute="leading" id="bSY-Ez-eje"/>
-                            <constraint firstItem="hsk-5k-SnL" firstAttribute="top" secondItem="zrB-t8-3BF" secondAttribute="top" id="wWR-dC-Hd0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="sJu-FU-ODA">
+                    <navigationItem key="navigationItem" title="SOS Guides" id="sJu-FU-ODA">
                         <barButtonItem key="leftBarButtonItem" image="user_icon.png" id="oBq-qH-AMK">
                             <connections>
                                 <segue destination="a8U-ks-jZu" kind="show" id="X9k-Z5-rnG"/>
@@ -53,6 +46,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="navigationController.navigationBar.translucent" value="NO"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CiX-T3-xE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -70,32 +66,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="checker_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="dgF-IF-OUW">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="zlr-3v-Okc">
-                                <rect key="frame" x="8" y="73" width="304" height="487"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tAL-gK-cWs">
+                                <rect key="frame" x="88" y="126" width="496" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ouT-rv-wfD">
+                                <rect key="frame" x="16" y="172" width="568" height="376"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Bv-SR-eaj">
+                                <rect key="frame" x="16" y="83" width="64" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="Pjl-MU-R8W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPr-VD-Hlp">
+                                <rect key="frame" x="16" y="130" width="64" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="sap-kD-MWE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nu7-z1-XKc" customClass="SOSMaskedTextField">
+                                <rect key="frame" x="88" y="80" width="496" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.61568627450980395" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="dgF-IF-OUW" secondAttribute="bottom" id="99n-8G-sds"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zlr-3v-Okc" secondAttribute="trailing" id="QV6-kA-yxH"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="zlr-3v-Okc" secondAttribute="bottom" id="WKt-do-zrh">
-                                <variation key="widthClass=compact" constant="8"/>
-                                <variation key="widthClass=regular" constant="24"/>
-                            </constraint>
-                            <constraint firstItem="dgF-IF-OUW" firstAttribute="top" secondItem="n4M-ny-YdZ" secondAttribute="top" id="XVU-OP-Rr3"/>
-                            <constraint firstItem="zlr-3v-Okc" firstAttribute="leading" secondItem="n4M-ny-YdZ" secondAttribute="leadingMargin" id="fsg-4f-YVd"/>
-                            <constraint firstAttribute="trailing" secondItem="dgF-IF-OUW" secondAttribute="trailing" id="rzo-dJ-BAq"/>
-                            <constraint firstItem="dgF-IF-OUW" firstAttribute="leading" secondItem="n4M-ny-YdZ" secondAttribute="leading" id="yre-Wi-md0"/>
-                            <constraint firstItem="zlr-3v-Okc" firstAttribute="top" secondItem="kS4-q2-jS3" secondAttribute="bottom" id="zjK-LH-s0y">
-                                <variation key="widthClass=compact" constant="8"/>
-                                <variation key="widthClass=regular" constant="24"/>
-                            </constraint>
+                            <constraint firstItem="cPr-VD-Hlp" firstAttribute="leading" secondItem="n4M-ny-YdZ" secondAttribute="leadingMargin" id="55Q-PU-GmT"/>
+                            <constraint firstItem="Nu7-z1-XKc" firstAttribute="top" secondItem="kS4-q2-jS3" secondAttribute="bottom" constant="16" id="Bpd-2W-0c4"/>
+                            <constraint firstItem="ouT-rv-wfD" firstAttribute="top" secondItem="tAL-gK-cWs" secondAttribute="bottom" constant="16" id="Cyj-YB-vpF"/>
+                            <constraint firstItem="ouT-rv-wfD" firstAttribute="leading" secondItem="n4M-ny-YdZ" secondAttribute="leadingMargin" id="Hbb-kL-wET"/>
+                            <constraint firstItem="tAL-gK-cWs" firstAttribute="leading" secondItem="cPr-VD-Hlp" secondAttribute="trailing" constant="8" id="Hyz-GQ-fCg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ouT-rv-wfD" secondAttribute="trailing" id="Nbe-1c-pEV"/>
+                            <constraint firstItem="7Bv-SR-eaj" firstAttribute="centerY" secondItem="Nu7-z1-XKc" secondAttribute="centerY" constant="-1.5" id="P8x-9V-tfh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nu7-z1-XKc" secondAttribute="trailing" id="USn-mm-PL7"/>
+                            <constraint firstItem="Nu7-z1-XKc" firstAttribute="leading" secondItem="7Bv-SR-eaj" secondAttribute="trailing" constant="8" id="WRL-tq-23n"/>
+                            <constraint firstItem="tAL-gK-cWs" firstAttribute="centerY" secondItem="cPr-VD-Hlp" secondAttribute="centerY" constant="0.5" id="eyw-A5-8R8"/>
+                            <constraint firstItem="7Bv-SR-eaj" firstAttribute="leading" secondItem="n4M-ny-YdZ" secondAttribute="leadingMargin" id="jNF-OC-ZtF"/>
+                            <constraint firstItem="4Qq-s7-aS8" firstAttribute="top" secondItem="ouT-rv-wfD" secondAttribute="bottom" constant="16" id="lOi-8O-8a8"/>
+                            <constraint firstItem="tAL-gK-cWs" firstAttribute="top" secondItem="Nu7-z1-XKc" secondAttribute="bottom" constant="16" id="owk-mu-qB7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tAL-gK-cWs" secondAttribute="trailing" id="tu4-ef-OxQ"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -114,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KgN-bP-rvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1136.25" y="430.9859154929577"/>
+            <point key="canvasLocation" x="1136" y="430"/>
         </scene>
         <!--Contacts-->
         <scene sceneID="cCU-sU-c3F">
@@ -136,14 +165,12 @@
                                             <rect key="frame" x="70" y="3" width="48" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="200" contentMode="left" text="Company" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WPy-CS-abM" userLabel="Label - Company">
                                             <rect key="frame" x="70" y="25" width="54" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" image="contact_icon.png" id="V5Z-6Y-2Oa">
@@ -263,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XNP-VN-Ewt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2212.5" y="-583.09859154929575"/>
+            <point key="canvasLocation" x="1961" y="-339"/>
         </scene>
         <!--SOS Container-->
         <scene sceneID="hUI-jz-tcH">
@@ -284,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YsB-sD-OFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-984.375" y="-769.01408450704218"/>
+            <point key="canvasLocation" x="-962" y="-778"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Quc-gd-ERi">
@@ -304,7 +331,6 @@
     </scenes>
     <resources>
         <image name="Profile.png" width="320" height="1032"/>
-        <image name="checker_bg.png" width="320" height="568"/>
         <image name="compose_icon.png" width="22" height="22"/>
         <image name="contact_icon.png" width="40" height="40"/>
         <image name="sos_button.png" width="27" height="27"/>
