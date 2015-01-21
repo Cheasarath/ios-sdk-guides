@@ -33,9 +33,13 @@
 #import "SOSExampleAlert.h"
 #import "SOSExampleNotification.h"
 
-#import <SOS/SOS.h>
-
 @interface MyContainerWindow : UIWindow
+@end
+
+@interface MyAlert: NSObject<SOSAlert>
+@property SOSExampleAlert *alert;
+@property MyContainerWindow *window;
+@property (copy) void (^blockInternal)(BOOL);
 @end
 
 @implementation MyContainerWindow
@@ -59,6 +63,8 @@
   MyContainerWindow *_container;
   SOSExampleAlert *_alert;
   SOSExampleNotification *_notification;
+  MyAlert *_myAlert;
+
 }
 @end
 
@@ -80,9 +86,18 @@
  */
 - (void)setup {
 
+  _myAlert = [MyAlert new];
+
   // First grab a pointer to the SOSSessionManager singleton.
   SOSSessionManager *sos = [SOSSessionManager sharedInstance];
   SOSUIComponents *components = [sos uiComponents];
+
+  /**
+   * Here the components alert delegate is changed to "_myAlert". One of the properties of _myAlert is the class containing the custom
+   * alert (example custom alert available in SOSExampleAlert.m). When an alert is triggered, we can then decide to use a custom alert
+   * or the standard alert. This is shown below inside the implementation of MyAlert.
+   */
+  [components setAlertDelegate: _myAlert];
 
   // Step 1. Disable default SOS UI behavior. NOTE: This does not extend to the agent window displayed during a session.
   [components setProgressHudEnabled:NO]; // The progress hud will no longer be displayed.
@@ -108,6 +123,9 @@
 
   [_notification setHidden:YES];
   [_notification setUserInteractionEnabled:YES];
+
+  // The MyAlert class requires a view to attach the custom alert to.
+  [_myAlert setWindow:_container];
 
   UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleNotificationTouch:)];
   [_notification addGestureRecognizer:tap];
@@ -187,4 +205,78 @@
   return instance;
 }
 
+@end
+
+@implementation MyAlert
+
+- (id) init {
+  if (self = [super init]) {
+    _alert = [[[NSBundle mainBundle] loadNibNamed:@"SOSExampleAlert" owner:self options:nil] objectAtIndex:0];
+  }
+  return self;
+}
+
+- (void)showAlertWithTitle:(NSString *)title
+                   message:(NSString *)message
+               cancelTitle:(NSString *)cancel
+              confirmTitle:(NSString *)confirm
+                      type:(SOSUINotificationType)type
+                completion:(void (^)(BOOL))block {
+
+  BOOL showStandardAlert = NO;
+
+  /**
+   * Here is where we decided which alerts will use a custom alert, and which will use the standard. We have done this
+   * based on the type of the alert.
+   * The alert types are:
+   * ConnectionPrompt
+   * DisconnectPrompt
+   * ConnectionRetryPrompt
+   * AgentDisconnected
+   * AgentMissing
+   * ConnectionTimedOut
+   * InsufficientNetworkConditions
+   * TestServerNotAvailable
+   * AgentNotAvailable
+   * DisconnectNetworkReachability
+   * DisconnectBackgroundedBeforeConnected
+   * ReEstablishAttemptFailed
+   */
+  switch (type) {
+    case ConnectionPrompt:
+      [_window addSubview:_alert];
+      [_alert showWithMessage:message completion:block];
+
+      break;
+    default:
+      showStandardAlert = YES;
+      _blockInternal = block;
+
+      break;
+  }
+
+  if (showStandardAlert) {
+    UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:title
+                                                       message:message
+                                                      delegate:self
+                                             cancelButtonTitle:cancel
+                                             otherButtonTitles:confirm, nil];
+
+    [theAlert show];
+  }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+
+  if (_blockInternal) {
+    //buttonIndex 0 is cancel
+    if(buttonIndex) {
+      _blockInternal(YES);
+    } else {
+      _blockInternal(NO);
+    }
+
+    _blockInternal = nil;
+  }
+}
 @end
