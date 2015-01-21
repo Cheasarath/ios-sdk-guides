@@ -85,3 +85,4 @@ Code can be found in the group:
 * `3. Customize (Advanced)/SOSApplication.m`
 
 This example shows how you can replace and reskin the standard default UI elements SOS provides.
+This example also demonstrates how you can replace specifc (or all) UIAlerts with custom UI Elements.
