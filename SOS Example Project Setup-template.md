@@ -89,6 +89,6 @@ This example also demonstrates how you can replace specifc (or all) UIAlerts wit
 
 Please refer to the following classes for examples.
 
-From the iOS Documentation the SOSAlert.h exposes the interface to allow you to implement a UIAlert replacement for our framework. http://sos.goinstant.com/pilot/ios/documentation/Protocols/SOSAlert.html
+From the iOS Documentation the [SOSAlert.h](http://sos.goinstant.com/pilot/ios/documentation/Protocols/SOSAlert.html) exposes the interface to allow you to implement a UIAlert replacement for our framework. 
 
-The implementation example in the SOS Guides can be found with the MyAlert class defined in the advanced application found [here](https://github.com/goinstant/sos-guides/blob/master/Guides/integrate-sos/SOSApplication.m)
+The implementation example in the SOS Guides can be found with the MyAlert class defined in the advanced application found [here](https://github.com/goinstant/sos-guides/blob/master/Guides/customize-advanced/SOSApplication.m).
