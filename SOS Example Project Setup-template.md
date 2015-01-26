@@ -32,6 +32,8 @@ __NOTE__: By default this settings file contains placeholder values.  If the cre
 
 ## Using the SOSExamples Project
 
+__NOTE__ CocoaPods creates or updates the `SOSExamples.xcworkspace` file. You need to use this file to load and build the project. The `SOSExamples.xcodeproj` will not work on its own.
+
 This sample application is designed to showcase how you might approach integrating SOS into your application. This application is almost entirely wired together via the storyboard. Most code that you will find in the project is specifically related to an SOS integration.
 
 ### Layout
