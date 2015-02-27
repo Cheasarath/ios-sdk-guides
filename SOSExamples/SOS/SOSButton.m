@@ -29,14 +29,14 @@
  */
 
 #import "SOSButton.h"
-#import "SOSApplication.h"
+#import "SOSGuidesApplication.h"
 #import <SOS/SOS.h>
 
 @implementation SOSButton
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
   [super touchesEnded:touches withEvent:event];
-  [[SOSApplication sharedInstance] startSession];
+  [[SOSGuidesApplication sharedInstance] startSession];
 }
 
 @end

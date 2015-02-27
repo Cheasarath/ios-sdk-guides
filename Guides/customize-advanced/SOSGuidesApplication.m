@@ -28,7 +28,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 #import <SOS/SOS.h>
-#import "SOSApplication.h"
+#import "SOSGuidesApplication.h"
 
 #import "SOSExampleAlert.h"
 #import "SOSExampleNotification.h"
@@ -59,7 +59,7 @@
 
 @end
 
-@interface SOSApplication() <SOSDelegate> {
+@interface SOSGuidesApplication() <SOSDelegate> {
   MyContainerWindow *_container;
   SOSExampleAlert *_alert;
   SOSExampleNotification *_notification;
@@ -73,7 +73,7 @@
  *
  *  In this guide we'll be disabling most of the default UI which SOS provides, and we will customize the general behavior of SOS.
  */
-@implementation SOSApplication
+@implementation SOSGuidesApplication
 
 #pragma mark - New Code
 

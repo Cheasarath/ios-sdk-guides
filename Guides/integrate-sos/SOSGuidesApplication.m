@@ -29,7 +29,7 @@
  */
 
 #import <SOS/SOS.h>
-#import "SOSApplication.h"
+#import "SOSGuidesApplication.h"
 
 /**
  *  In this guide you'll be setting up a basic implementation of SOS in our demo application.
@@ -41,7 +41,7 @@
  *     previous one so code will be moved, and in one place.
  *  3. New code for each guide will be commented.
  */
-@implementation SOSApplication
+@implementation SOSGuidesApplication
 
 /**
  *  This method is called from application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions in the SOSExamples/AppDelegate.m file.

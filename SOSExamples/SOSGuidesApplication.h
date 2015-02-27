@@ -39,7 +39,7 @@
 /**
  * A simple example of encapsulating SOS calls to make accessing SOS from many view controllers easier.
  */
-@interface SOSApplication : NSObject
+@interface SOSGuidesApplication : NSObject
 
 - (SOSOptions *)getSessionOptions;
 
