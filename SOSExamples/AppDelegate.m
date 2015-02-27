@@ -29,14 +29,14 @@
  */
 
 #import "AppDelegate.h"
-#import "SOSApplication.h"
+#import "SOSGuidesApplication.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   // Run the setup on our SOS Wrapper.
-  [[SOSApplication sharedInstance] setup];
+  [[SOSGuidesApplication sharedInstance] setup];
 
   return YES;
 }

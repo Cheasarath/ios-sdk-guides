@@ -28,7 +28,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 #import <SOS/SOS.h>
-#import "SOSApplication.h"
+#import "SOSGuidesApplication.h"
 
 /**
  *  In this guide we will be customizing some of the default SOS behavior.
@@ -38,7 +38,7 @@
  *  The SOSScreenAnnotations class provides the ability to modify properties related to line drawing.
  *
  */
-@implementation SOSApplication
+@implementation SOSGuidesApplication
 
 /**
  *  In the first example we we're doing a basic integration with no customization.
