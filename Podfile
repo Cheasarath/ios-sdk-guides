@@ -1,4 +1,5 @@
 # Your Podfile should contain the following:
+source 'https://github.com/goinstant/pods-specs-public'
 pod 'SOS', '0.11.0'
 
 post_install do |installer_representation|
