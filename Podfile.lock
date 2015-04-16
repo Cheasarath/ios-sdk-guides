@@ -1,13 +1,13 @@
 PODS:
-  - OpenTok (2.3.1-sc)
-  - SOS (0.8.0):
-    - OpenTok (= 2.3.1-sc)
+  - OpenTok (2.4.1-RC.1)
+  - SOS (0.11.0):
+    - OpenTok (= 2.4.1-RC.1)
 
 DEPENDENCIES:
-  - SOS (= 0.8.0)
+  - SOS (= 0.11.0)
 
 SPEC CHECKSUMS:
-  OpenTok: 7582ce539e2883d535f529fee382622b6376d68a
-  SOS: 46bd5a606a78e8968d5401ae14c9945295e6b8f8
+  OpenTok: 8cf12373ee6efbae22d22c82b5c126a67bd3bd3b
+  SOS: 18ec975a33a51da76d2934c6a4f2c0cf98949c1c
 
 COCOAPODS: 0.35.0
