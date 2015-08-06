@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D4D4EAEDB1B1B6CB8203B0E7D9928A0C7C7E9F6F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "22A1AA82E5BE70D3895A5F771D44B742541D330B" : 0,
+    "D4D4EAEDB1B1B6CB8203B0E7D9928A0C7C7E9F6F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E2F43FED-C7E7-46C1-B724-85C7A05F155C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "22A1AA82E5BE70D3895A5F771D44B742541D330B" : "Test\/sos-framework",
+    "D4D4EAEDB1B1B6CB8203B0E7D9928A0C7C7E9F6F" : "sos-guides"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SOSExamples",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 203,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SOSExamples.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:goinstant\/sos-framework.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "22A1AA82E5BE70D3895A5F771D44B742541D330B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/goinstant\/sos-guides.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D4D4EAEDB1B1B6CB8203B0E7D9928A0C7C7E9F6F"
+    }
+  ]
+}

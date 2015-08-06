@@ -29,6 +29,7 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "SOSExampleNotification.h"
 
 @class SOSOptions;
 
@@ -58,5 +59,6 @@
  */
 - (void)setup;
 
+@property (retain, nonatomic) SOSExampleNotification *notification;
 
 @end

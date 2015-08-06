@@ -30,6 +30,10 @@
 #import <SOS/SOS.h>
 #import "SOSGuidesApplication.h"
 
+@interface SOSGuidesApplication() <SOSDelegate> {
+}
+@end
+
 /**
  *  In this guide we will be customizing some of the default SOS behavior.
  *
@@ -115,6 +119,12 @@
   }];
 }
 
+- (void)sos:(SOSSessionManager *)sos stateDidChange:(SOSSessionState)current previous:(SOSSessionState)previous {
+    if (current == SOSSessionStateConfiguring && previous == SOSSessionStateInactive) {
+        [self setup];
+    }
+}
+
 #pragma mark - Singleton
 
 + (instancetype)sharedInstance {
@@ -126,6 +136,13 @@
   });
 
   return instance;
+}
+
+- (instancetype)init {
+    if (self = [super init]) {
+        [[SOSSessionManager sharedInstance] addDelegate:self];
+    }
+    return self;
 }
 
 @end

@@ -31,15 +31,8 @@
 #import "SOSGuidesApplication.h"
 
 #import "SOSExampleAlert.h"
-#import "SOSExampleNotification.h"
 
 @interface MyContainerWindow : UIWindow
-@end
-
-@interface MyAlert: NSObject<SOSAlertNotification>
-@property SOSExampleAlert *alert;
-@property MyContainerWindow *window;
-@property (copy) void (^blockInternal)(BOOL);
 @end
 
 @implementation MyContainerWindow
@@ -59,11 +52,9 @@
 
 @end
 
-@interface SOSGuidesApplication() <SOSDelegate> {
+@interface SOSGuidesApplication() <SOSStatusNotification, SOSDelegate> {
   MyContainerWindow *_container;
   SOSExampleAlert *_alert;
-  SOSExampleNotification *_notification;
-  MyAlert *_myAlert;
 
 }
 @end
@@ -86,8 +77,6 @@
  */
 - (void)setup {
 
-  _myAlert = [MyAlert new];
-
   // First grab a pointer to the SOSSessionManager singleton.
   SOSSessionManager *sos = [SOSSessionManager sharedInstance];
   SOSUIComponents *components = [sos uiComponents];
@@ -97,7 +86,8 @@
    * alert (example custom alert available in SOSExampleAlert.m). When an alert is triggered, we can then decide to use a custom alert
    * or the standard alert. This is shown below inside the implementation of MyAlert.
    */
-  [components setAlertDelegate: _myAlert];
+    __weak typeof(self) wSelf = self;
+  [components setStatusDelegate: wSelf];
 
   // Step 1. Disable default SOS UI behavior. NOTE: This does not extend to the agent window displayed during a session.
   [components setProgressHudEnabled:NO]; // The progress hud will no longer be displayed.
@@ -124,14 +114,12 @@
   [_notification setHidden:YES];
   [_notification setUserInteractionEnabled:YES];
 
-  // The MyAlert class requires a view to attach the custom alert to.
-  [_myAlert setWindow:_container];
-
   UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleNotificationTouch:)];
   [_notification addGestureRecognizer:tap];
 
+
+
   // Step 3. Add this class to the delegates in SOSSessionManager
-  [sos addDelegate:self];
 }
 
 #pragma mark - Older Example Code
@@ -170,19 +158,10 @@
   [sos stopSession];
 }
 
-#pragma mark - SOSDelegate Handlers
-
-- (void)sosDidStart:(SOSSessionManager *)sos {
-  [_notification showWithMessage:@"Initializing.."];
-}
-
-- (void)sosDidConnect:(SOSSessionManager *)sos {
-  [_notification showWithMessage:@"Waiting for an Agent.."];
-}
-
-- (void)sosAgentJoined:(SOSSessionManager *)sos {
-  [_notification showWithMessage:@"Agent has joined"];
-  [_notification hideAfterDelay:1.f];
+- (void)sos:(SOSSessionManager *)sos stateDidChange:(SOSSessionState)current previous:(SOSSessionState)previous {
+    if (current == SOSSessionStateConfiguring && previous == SOSSessionStateInactive) {
+        [self setup];
+    }
 }
 
 #pragma mark - GestureRecognizers
@@ -204,75 +183,39 @@
   return instance;
 }
 
-@end
-
-@implementation MyAlert
-
-- (id) init {
-  if (self = [super init]) {
-    _alert = [[[NSBundle mainBundle] loadNibNamed:@"SOSExampleAlert" owner:self options:nil] objectAtIndex:0];
-  }
-  return self;
-}
-
-- (BOOL)showAlertWithTitle:(NSString *)title
-                   message:(NSString *)message
-               cancelTitle:(NSString *)cancel
-              confirmTitle:(NSString *)confirm
-                      type:(SOSUIAlertNotificationType)type
-                completion:(void (^)(BOOL))block {
-
-  BOOL showStandardAlert = NO;
-
-  /**
-   * Here is where we decided which alerts will use a custom alert, and which will use the standard. We have done this
-   * based on the type of the alert.
-   * The alert types are:
-   * ConnectionPrompt
-   * DisconnectPrompt
-   * ConnectionRetryPrompt
-   * AgentDisconnected
-   * AgentMissing
-   * ConnectionTimedOut
-   * InsufficientNetworkConditions
-   * TestServerNotAvailable
-   * AgentNotAvailable
-   * DisconnectNetworkReachability
-   * DisconnectBackgroundedBeforeConnected
-   * ReEstablishAttemptFailed
-   */
-  switch (type) {
-    case ConnectionPrompt:
-      [_window addSubview:_alert];
-      [_alert showWithMessage:message completion:block];
-
-      break;
-    default:
-      showStandardAlert = YES;
-      _blockInternal = block;
-
-      break;
-  }
-
-    return showStandardAlert;
-}
-
-- (void)dismissCurrentAlert {
-
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-
-  if (_blockInternal) {
-    //buttonIndex 0 is cancel
-    if(buttonIndex) {
-      _blockInternal(YES);
-    } else {
-      _blockInternal(NO);
+- (instancetype)init {
+    if (self = [super init]) {
+        [[SOSSessionManager sharedInstance] addDelegate:self];
     }
+    return self;
+}
 
-    _blockInternal = nil;
-  }
+- (BOOL)showStatusWithTitle:(NSString *)title message:(NSString *)message type:(SOSUIStatusNotificationType)type  {
+    BOOL returnStatus = NO;
+    switch (type) {
+        case AgentJoined:
+            [_notification showWithMessage:@"Agent has joined"];
+            [_notification hideAfterDelay:1.f];
+            returnStatus = YES;
+            break;
+        case Initializing:
+            [_notification showWithMessage:@"Initializing.."];
+            returnStatus = YES;
+            break;
+        case WaitingForAgent:
+            [_notification showWithMessage:@"Waiting for an Agent.."];
+            returnStatus = YES;
+            break;
+        default:
+            returnStatus = NO;
+            break;
+
+    }
+    return returnStatus;
+}
+
+- (void)dismissCurrentStatus {
+    [SOSGuidesApplication sharedInstance].notification.hidden = YES;
 }
 
 @end

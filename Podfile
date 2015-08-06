@@ -1,7 +1,7 @@
 # Your Podfile should contain the following:
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/goinstant/pods-specs-public'
-pod 'SOS', '1.0.1'
+pod 'SOS', :path => '../sos-framework'
 
 post_install do |installer_representation|
   installer_representation.pods_project.targets.each do |target|

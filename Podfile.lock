@@ -1,13 +1,47 @@
 PODS:
+  - AFNetworking (2.3.1):
+    - AFNetworking/NSURLConnection (= 2.3.1)
+    - AFNetworking/NSURLSession (= 2.3.1)
+    - AFNetworking/Reachability (= 2.3.1)
+    - AFNetworking/Security (= 2.3.1)
+    - AFNetworking/Serialization (= 2.3.1)
+    - AFNetworking/UIKit (= 2.3.1)
+  - AFNetworking/NSURLConnection (2.3.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.3.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.3.1)
+  - AFNetworking/Security (2.3.1)
+  - AFNetworking/Serialization (2.3.1)
+  - AFNetworking/UIKit (2.3.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - MBProgressHUD (0.9)
   - OpenTok (2.5.0)
-  - SOS (1.0.1):
+  - SOS (0.13.1):
+    - AFNetworking (= 2.3.1)
+    - MBProgressHUD (= 0.9)
+    - SOS/OpenTok (= 0.13.1)
+  - SOS/OpenTok (0.13.1):
+    - AFNetworking (= 2.3.1)
+    - MBProgressHUD (= 0.9)
     - OpenTok (= 2.5.0)
 
 DEPENDENCIES:
-  - SOS (= 1.0.1)
+  - SOS (from `../sos-framework`)
+
+EXTERNAL SOURCES:
+  SOS:
+    :path: ../sos-framework
 
 SPEC CHECKSUMS:
+  AFNetworking: 05b9f6e3aa5ac45bc383b4bb108ef338080a26c7
+  MBProgressHUD: d8e7ea388dc1549a42e0d219067cf5f2c898fb66
   OpenTok: 1591ecf403a719b8d93cf864956a33413c39ecf8
-  SOS: 7a7c0e353ff1b5b0a4740e136f0908a022200eeb
+  SOS: e0b3b5fc628d6c6297ff62bd3ab3780c7eaec1e4
 
 COCOAPODS: 0.38.2
