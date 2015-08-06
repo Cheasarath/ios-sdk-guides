@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>Salesforce Organization ID</key>
-	<string>afakeorgid-1234</string>
+	<string>00DB00000001M9W</string>
 	<key>Email</key>
-	<string>lauren@example.com</string>
+	<string>info@salesforce.com</string>
 	<key>Live Agent Pod</key>
-	<string>la-1.d.salesforce.com</string>
+	<string>d.la.gus.salesforce.com</string>
 	<key>Deployment ID</key>
-	<string>afakedeployment</string>
+	<string>0NWB0000000008e</string>
 </dict>
 </plist>

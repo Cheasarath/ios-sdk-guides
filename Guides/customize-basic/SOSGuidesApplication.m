@@ -74,10 +74,9 @@
   NSString *path = [[NSBundle mainBundle] pathForResource:@"SOSSettings" ofType:@"plist"];
   NSDictionary *settings = [[NSDictionary alloc] initWithContentsOfFile:path];
 
-  SOSOptions *opts = [SOSOptions optionsWithEmail:settings[@"Email"]
-                                     liveAgentPod:settings[@"Live Agent Pod"]
-                                            orgId:settings[@"Salesforce Organization ID"]
-                                     deploymentId:settings[@"Deployment ID"]];
+  SOSOptions *opts = [SOSOptions optionsWithLiveAgentPod:settings[@"Live Agent Pod"]
+                                                   orgId:settings[@"Salesforce Organization ID"]
+                                            deploymentId:settings[@"Deployment ID"]];
 
   [opts setSessionRetryTime:10 * 1000]; // Set the retry prompt for 10 seconds (10,000 ms)
 

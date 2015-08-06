@@ -36,7 +36,7 @@
 @interface MyContainerWindow : UIWindow
 @end
 
-@interface MyAlert: NSObject<SOSAlert>
+@interface MyAlert: NSObject<SOSAlertNotification>
 @property SOSExampleAlert *alert;
 @property MyContainerWindow *window;
 @property (copy) void (^blockInternal)(BOOL);
@@ -141,10 +141,9 @@
   NSString *path = [[NSBundle mainBundle] pathForResource:@"SOSSettings" ofType:@"plist"];
   NSDictionary *settings = [[NSDictionary alloc] initWithContentsOfFile:path];
 
-  SOSOptions *opts = [SOSOptions optionsWithEmail:settings[@"Email"]
-                                     liveAgentPod:settings[@"Live Agent Pod"]
-                                            orgId:settings[@"Salesforce Organization ID"]
-                                     deploymentId:settings[@"Deployment ID"]];
+  SOSOptions *opts = [SOSOptions optionsWithLiveAgentPod:settings[@"Live Agent Pod"]
+                                                   orgId:settings[@"Salesforce Organization ID"]
+                                            deploymentId:settings[@"Deployment ID"]];
 
   [opts setSessionRetryTime:10 * 1000]; // Set the retry prompt for 10 seconds (10,000 ms)
 
@@ -216,11 +215,11 @@
   return self;
 }
 
-- (void)showAlertWithTitle:(NSString *)title
+- (BOOL)showAlertWithTitle:(NSString *)title
                    message:(NSString *)message
                cancelTitle:(NSString *)cancel
               confirmTitle:(NSString *)confirm
-                      type:(SOSUINotificationType)type
+                      type:(SOSUIAlertNotificationType)type
                 completion:(void (^)(BOOL))block {
 
   BOOL showStandardAlert = NO;
@@ -255,15 +254,11 @@
       break;
   }
 
-  if (showStandardAlert) {
-    UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:title
-                                                       message:message
-                                                      delegate:self
-                                             cancelButtonTitle:cancel
-                                             otherButtonTitles:confirm, nil];
+    return showStandardAlert;
+}
 
-    [theAlert show];
-  }
+- (void)dismissCurrentAlert {
+
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -279,4 +274,5 @@
     _blockInternal = nil;
   }
 }
+
 @end

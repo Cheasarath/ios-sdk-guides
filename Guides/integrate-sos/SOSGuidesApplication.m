@@ -93,10 +93,9 @@
 
   // NOTE: By default the valies in the SOSSettings.plist are not valid and will result in an error on session start.
   // Be sure to change those to match the credentials provided to you.
-  return [SOSOptions optionsWithEmail:settings[@"Email"]
-                         liveAgentPod:settings[@"Live Agent Pod"]
-                                orgId:settings[@"Salesforce Organization ID"]
-                         deploymentId:settings[@"Deployment ID"]];
+  return [SOSOptions optionsWithLiveAgentPod:settings[@"Live Agent Pod"]
+                                       orgId:settings[@"Salesforce Organization ID"]
+                                deploymentId:settings[@"Deployment ID"]];
 }
 
 #pragma mark - Singleton
