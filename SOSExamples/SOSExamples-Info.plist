@@ -43,5 +43,47 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>sos.goinstant.net</key>
+			<dict>
+  				<key>NSExceptionRequiresForwardSecrecy</key>
+			  	<false/>
+	  			<key>NSIncludesSubdomains</key>
+  				<true/>
+	  			<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+  				<false/>
+			</dict>
+			<key>network-test.salesforcesos.com</key>
+			<dict>
+  				<key>NSExceptionRequiresForwardSecrecy</key>
+  				<false/>
+  				<key>NSIncludesSubdomains</key>
+  				<true/>
+  				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+  				<false/>
+			</dict>
+			<key>salesforceliveagent.com</key>
+			<dict>
+	  			<key>NSExceptionRequiresForwardSecrecy</key>
+  				<false/>
+	  			<key>NSIncludesSubdomains</key>
+  				<true/>
+  				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+  				<false/>
+			</dict>
+			<key>salesforce.com</key>
+			<dict>
+  				<key>NSExceptionRequiresForwardSecrecy</key>
+  				<false/>
+  				<key>NSIncludesSubdomains</key>
+  				<true/>
+  				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+  				<false/>
+			</dict>
+		</dict>
+	</dict>
 </dict>
 </plist>

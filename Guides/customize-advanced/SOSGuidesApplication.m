@@ -104,12 +104,15 @@
   //         This lets us manage UI components without having to manage them in a specific view controller.
   CGRect frame = CGRectMake(0,0,[UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
   _container = [[MyContainerWindow alloc] initWithFrame:frame];
+    _container.rootViewController = [UIViewController new];
   _notification = [[[NSBundle mainBundle] loadNibNamed:@"SOSExampleNotification" owner:self options:nil] objectAtIndex:0];
 
-  [_container setWindowLevel:UIWindowLevelAlert - 1000.f];
+  [_container setWindowLevel:UIWindowLevelAlert - 1.0f];
+    [_container setAutoresizesSubviews:NO];
+    [_container setUserInteractionEnabled:NO];
   [_container addSubview:_notification];
   [_container addSubview:_alert];
-  [_container setHidden:NO];
+  [_container setHidden:YES];
 
   [_notification setHidden:YES];
   [_notification setUserInteractionEnabled:YES];
@@ -194,15 +197,18 @@
     BOOL returnStatus = NO;
     switch (type) {
         case AgentJoined:
+            [_container setHidden:NO];
             [_notification showWithMessage:@"Agent has joined"];
             [_notification hideAfterDelay:1.f];
             returnStatus = YES;
             break;
         case Initializing:
+            [_container setHidden:NO];
             [_notification showWithMessage:@"Initializing.."];
             returnStatus = YES;
             break;
         case WaitingForAgent:
+            [_container setHidden:NO];
             [_notification showWithMessage:@"Waiting for an Agent.."];
             returnStatus = YES;
             break;
@@ -216,6 +222,7 @@
 
 - (void)dismissCurrentStatus {
     [SOSGuidesApplication sharedInstance].notification.hidden = YES;
+    [_container setHidden:YES];
 }
 
 @end
