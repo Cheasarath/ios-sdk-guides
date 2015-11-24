@@ -793,6 +793,7 @@
 			baseConfigurationReference = 750E7102C25A268A0E17AE27 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SOSExamples/SOSExamples-Prefix.pch";
 				INFOPLIST_FILE = "SOSExamples/SOSExamples-Info.plist";
@@ -810,6 +811,7 @@
 			baseConfigurationReference = 00A304535653301B155CB5F0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SOSExamples/SOSExamples-Prefix.pch";
 				INFOPLIST_FILE = "SOSExamples/SOSExamples-Info.plist";
@@ -828,6 +830,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SOSExamples/SOSExamples-Prefix.pch";
 				INFOPLIST_FILE = "SOSExamples/SOSExamples-Info.plist";
@@ -845,6 +848,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SOSExamples/SOSExamples-Prefix.pch";
 				INFOPLIST_FILE = "SOSExamples/SOSExamples-Info.plist";
@@ -862,6 +866,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SOSExamples/SOSExamples-Prefix.pch";
 				INFOPLIST_FILE = "SOSExamples/SOSExamples-Info.plist";
@@ -879,6 +884,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SOSExamples/SOSExamples-Prefix.pch";
 				INFOPLIST_FILE = "SOSExamples/SOSExamples-Info.plist";
