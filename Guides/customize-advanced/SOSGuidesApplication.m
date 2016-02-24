@@ -162,7 +162,7 @@
 }
 
 - (void)sos:(SOSSessionManager *)sos stateDidChange:(SOSSessionState)current previous:(SOSSessionState)previous {
-    if (current == SOSSessionStateConfiguring && previous == SOSSessionStateInactive) {
+    if (current == SOSSessionStateInitializing && previous == SOSSessionStateConfiguring) {
         [self setup];
     }
 }
