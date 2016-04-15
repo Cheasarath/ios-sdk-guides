@@ -35,9 +35,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  // Run the setup on our SOS Wrapper.
-  [[SOSGuidesApplication sharedInstance] setup];
-
   return YES;
 }
 

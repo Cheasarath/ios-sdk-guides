@@ -30,6 +30,99 @@
 #import <SOS/SOS.h>
 #import "SOSGuidesApplication.h"
 
+@interface SOSBranding (override)
++ (UIColor *)brandPrimaryWithAlpha:(CGFloat)alpha;
++ (UIColor *)brandSecondaryWithAlpha:(CGFloat)alpha;
++ (UIColor *)tertiaryWithAlpha:(CGFloat)alpha;
++ (UIColor *)quaternaryWithAlpha:(CGFloat)alpha;
++ (UIColor *)textPrimaryWithAlpha:(CGFloat)alpha;
++ (UIColor *)textSecondaryWithAlpha:(CGFloat)alpha;
++ (UIColor *)feedbackWithAlpha:(CGFloat)alpha;
++ (UIColor *)background;
++ (UIColor *)header;
++ (UIColor *)headline;
++ (UIColor *)active;
++ (UIColor *)inactive;
++ (UIColor *)cta;
++ (UIColor *)title;
+@end
+
+@implementation SOSBranding (override)
+
++ (UIColor *)brandPrimaryWithAlpha:(CGFloat)alpha {
+    UIColor *color = [UIColor colorWithRed:46.f/255.f green:189.f/255.f blue:89.f/255.f alpha:alpha];
+    return color;
+}
+
++ (UIColor *)brandSecondaryWithAlpha:(CGFloat)alpha {
+    UIColor *color = [UIColor colorWithRed:39.f/255.f green:163.f/255.f blue:76.f/255.f alpha:alpha];
+    return color;
+}
+
++ (UIColor *)tertiaryWithAlpha:(CGFloat)alpha {
+    UIColor *color = [UIColor colorWithRed:51.f/255.f green:51.f/255.f blue:51.f/255.f alpha:alpha];
+    return color;
+}
+
+// Not used.
++ (UIColor *)quaternaryWithAlpha:(CGFloat)alpha {
+    UIColor *color = [UIColor colorWithRed:68.f/255.f green:68.f/255.f blue:68.f/255.f alpha:alpha];
+    return color;
+}
+
++ (UIColor *)textPrimaryWithAlpha:(CGFloat)alpha {
+    UIColor *color = [UIColor colorWithRed:255.f/255.f green:255.f/255.f blue:255.f/255.f alpha:alpha];
+    return color;
+}
+
++ (UIColor *)textSecondaryWithAlpha:(CGFloat)alpha {
+    UIColor *color = [UIColor colorWithRed:244.f/255.f green:244.f/255.f blue:244.f/255.f alpha:alpha];
+    return color;
+}
+
++ (UIColor *)feedbackWithAlpha:(CGFloat)alpha {
+    UIColor *color = [UIColor colorWithRed:231.f/255.f green:76.f/255.f blue:60.f/255.f alpha:alpha];
+    return color;
+}
+
++ (UIColor *)background {
+    UIColor *color = [UIColor colorWithRed:17.f/255.f green:17.f/255.f blue:17.f/255.f alpha:1.0f];
+    return color;
+}
+
++ (UIColor *)header {
+    UIColor *color = [UIColor colorWithRed:34.f/255.f green:34.f/255.f blue:34.f/255.f alpha:1.0f];
+    return color;
+}
+
++ (UIColor *)headline {
+    UIColor *color = [UIColor whiteColor];
+    return color;
+}
+
+// Not used.
++ (UIColor *)active {
+    UIColor *color = [UIColor colorWithRed:78/255.f green:216/255.f blue:102/255.f alpha:1.f];
+    return color;
+}
+
+// Not used.
++ (UIColor *)inactive {
+    UIColor *color = [UIColor colorWithRed:248/255.f green:231/255.f blue:28/255.f alpha:1.f];
+    return color;
+}
+
++ (UIColor *)cta {
+    UIColor *color = [UIColor colorWithRed:252/255.f green:252/255.f blue:252/255.f alpha:1.f];
+    return color;
+}
+
++ (UIColor *)title {
+    UIColor *color = [UIColor colorWithRed:251/255.f green:251/255.f blue:251/255.f alpha:1.f];
+    return color;
+}
+@end
+
 @interface SOSGuidesApplication() <SOSDelegate> {
 }
 @end
@@ -43,29 +136,6 @@
  *
  */
 @implementation SOSGuidesApplication
-
-/**
- *  In the first example we we're doing a basic integration with no customization.
- *  Here we will be modifying the language presented to the user for various popups, and changing the look of the line drawing.
- */
-- (void)setup {
-
-  // First grab a pointer to the SOSSessionManager singleton.
-  SOSSessionManager *sos = [SOSSessionManager sharedInstance];
-  SOSUIComponents *components = [sos uiComponents];
-  SOSScreenAnnotations *annotations = [sos annotations];
-
-  [components setAlertTitle:@"Example 2."]; // Sets the title used for UI Alerts.
-  [components setConnectMessage:@"This is the alert customers see when starting SOS"];
-  [components setDisconnectMessage:@"This is the alert customers see when a user attempts to end a session"];
-  [components setAgentDisconnectMessage:@"This is the alert customers see when the agent ends the session"];
-
-  [components setConnectionRetryMessage:@"The user has been waiting in the queue, they will be asked to continue/quit here"];
-  [components setConnectionTimedOutMessage:@"The session has gone unanswered too long, it has been automatically ended"];
-  
-  [annotations setLineWidth:18.f]; // this changes the width of the line drawn by the agent
-  [annotations setLineColor:[UIColor magentaColor]]; // this changes the color of the line drawn by the agent
-}
 
 /**
  *  For this example we will also set the retry and expiry proprties of the options object.
@@ -95,34 +165,28 @@
  * Instead; let's add a check for the session state, and then prompt the user to cancel the session.
  */
 - (void)startSession {
-  SOSSessionManager *sos = [SOSSessionManager sharedInstance];
-  if ([sos state] != SOSSessionStateInactive) {
-    // We're either connecting, or are in a session already.
+    SOSSessionManager *sos = [[SCServiceCloud sharedInstance] sos];
+    if ([sos state] != SOSSessionStateInactive) {
+        // We're either connecting, or are in a session already.
 
-    // Calling stopSession will prompt the user to cancel the session. If they cancel, this method does nothing.
-    // Otherwise it will begin the shutdown flow.
-    [sos stopSession];
-    return;
-  }
-
-  SOSOptions *opts = [self getSessionOptions];
-  [sos startSessionWithOptions:opts completion:^(NSError *error, SOSSessionManager *sos) {
-    if (error) {
-      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                      message:[error localizedDescription]
-                                                     delegate:nil
-                                            cancelButtonTitle:@"Ok"
-                                            otherButtonTitles:nil];
-
-      [alert show];
+        // Calling stopSession will prompt the user to cancel the session. If they cancel, this method does nothing.
+        // Otherwise it will begin the shutdown flow.
+        [sos stopSession];
+        return;
     }
-  }];
-}
 
-- (void)sos:(SOSSessionManager *)sos stateDidChange:(SOSSessionState)current previous:(SOSSessionState)previous {
-    if (current == SOSSessionStateInitializing && previous == SOSSessionStateConfiguring) {
-        [self setup];
-    }
+    SOSOptions *opts = [self getSessionOptions];
+    [sos startSessionWithOptions:opts completion:^(NSError *error, SOSSessionManager *sos) {
+        if (error) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+
+            [alert show];
+        }
+    }];
 }
 
 #pragma mark - Singleton
@@ -136,13 +200,6 @@
   });
 
   return instance;
-}
-
-- (instancetype)init {
-    if (self = [super init]) {
-        [[SOSSessionManager sharedInstance] addDelegate:self];
-    }
-    return self;
 }
 
 @end

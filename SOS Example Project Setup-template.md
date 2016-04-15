@@ -77,20 +77,5 @@ Code can be found in the group:
 
 * `2. Customize (Basic)/SOSApplication.m`
 
-This example shows how you can customize the language of SOS messages, and change
-basic things like the line width/color for the Agent annotations
+This example shows how you can customize the branding of the SOS experience. The branding will take the provided color set and apply them through the app in an coordinated manner. The branding is achieved through class overrides.
 
-### 3. Customize (Advanced)
-
-Code can be found in the group:
-
-* `3. Customize (Advanced)/SOSApplication.m`
-
-This example shows how you can replace and reskin the standard default UI elements SOS provides.
-This example also demonstrates how you can replace specifc (or all) UIAlerts with custom UI Elements.
-
-Please refer to the following classes for examples.
-
-From the iOS Documentation the [SOSAlert.h](http://sos.goinstant.com/pilot/ios/documentation/Protocols/SOSAlert.html) exposes the interface to allow you to implement a UIAlert replacement for our framework. 
-
-The implementation example in the SOS Guides can be found with the MyAlert class defined in the advanced application found [here](https://github.com/goinstant/sos-guides/blob/master/Guides/customize-advanced/SOSApplication.m).

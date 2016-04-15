@@ -1,6 +1,7 @@
 # Your Podfile should contain the following:
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/goinstant/pods-specs-public'
+
 pod 'SOS'
 
 post_install do |installer_representation|

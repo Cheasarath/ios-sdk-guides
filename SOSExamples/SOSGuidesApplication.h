@@ -54,10 +54,6 @@
  */
 - (void)startSession;
 
-/**
- *  <#Description#>
- */
-- (void)setup;
 
 @property (retain, nonatomic) SOSExampleNotification *notification;
 

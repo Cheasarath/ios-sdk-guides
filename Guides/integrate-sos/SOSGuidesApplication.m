@@ -44,39 +44,31 @@
 @implementation SOSGuidesApplication
 
 /**
- *  This method is called from application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions in the SOSExamples/AppDelegate.m file.
- *  For our basic integration there's nothing to do here.
- *
- *  We will be adding more to this as we go.
- */
-- (void)setup {
-}
-
-/**
  *  Simple class method which wraps starting an SOS session. Although SOSSessionManager is a singleton, there is some boilerplate code for starting
  *  a session that you would have to repeat for any action which would trigger a session.
  */
 - (void)startSession {
 
-  SOSOptions *opts = [self getSessionOptions];
-  [[SOSSessionManager sharedInstance] startSessionWithOptions:opts completion:^(NSError *error, SOSSessionManager *sos) {
+    SOSOptions *opts = [self getSessionOptions];
+    SOSSessionManager *sos = [[SCServiceCloud sharedInstance] sos];
+    [sos startSessionWithOptions:opts completion:^(NSError *error, SOSSessionManager *sos) {
 
-    // Simple error handling case.
-    // If any part of a session launch returns an error it will be available here.
-    // If you haven't changed the Account/Application names for example you will see an error here.
-    if (error) {
+        // Simple error handling case.
+        // If any part of a session launch returns an error it will be available here.
+        // If you haven't changed the Account/Application names for example you will see an error here.
+        if (error) {
 
-      // Generate an alert
-      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                      message:[error localizedDescription]
-                                                     delegate:nil
-                                            cancelButtonTitle:@"Ok"
-                                            otherButtonTitles:nil];
+            // Generate an alert
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                          message:[error localizedDescription]
+                                                         delegate:nil
+                                                cancelButtonTitle:@"Ok"
+                                                otherButtonTitles:nil];
 
-      // Show the error.
-      [alert show];
-    }
-  }];
+            // Show the error.
+            [alert show];
+        }
+    }];
 }
 
 
