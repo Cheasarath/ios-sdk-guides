@@ -2,7 +2,13 @@
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/goinstant/pods-specs-public'
 
-pod 'SOS'
+target '1. Integrate SOS' do
+  pod 'SOS', '2.0.1'
+end
+
+target '2. Customize (Basic)' do
+  pod 'SOS', '2.0.1'
+end
 
 post_install do |installer_representation|
   installer_representation.pods_project.targets.each do |target|
