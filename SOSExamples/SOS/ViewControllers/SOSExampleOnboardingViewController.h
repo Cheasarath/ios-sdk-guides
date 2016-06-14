@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014, GoInstant Inc., a salesforce.com company
+ * Copyright © salesforce.com, inc. 2014-2016
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
@@ -12,7 +12,7 @@
  * list of conditions and the following disclaimer in the documentation and/or
  * other materials provided with the distribution.
  *
- * Neither the name of the {organization} nor the names of its
+ * Neither the name of salesforce.com nor the names of its
  * contributors may be used to endorse or promote products derived from
  * this software without specific prior written permission.
  *
@@ -28,43 +28,11 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "SOSExampleNotification.h"
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@implementation SOSExampleNotification
+#import <SOS/SOS.h>
 
-- (id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-      [_activity startAnimating];
-    }
-    return self;
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder {
-  self = [super initWithCoder:aDecoder];
-  if (self) {
-    [_activity setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
-    [_activity startAnimating];
-  }
-  return self;
-}
-
-- (void)showWithMessage:(NSString *)message {
-  CGSize screenSize = [UIScreen mainScreen].bounds.size;
-  CGSize notificationSize = self.bounds.size;
-
-  [self setCenter:CGPointMake(screenSize.width/2, screenSize.height - notificationSize.height/2)];
-  [_lblMessage setText:message];
-  [_activity startAnimating];
-  [self setHidden:NO];
-}
-
-- (void)hideAfterDelay:(NSTimeInterval)delay {
-  [self performSelector:@selector(hide) withObject:nil afterDelay:delay];
-}
-
-- (void)hide {
-  [self setHidden:YES];
-}
+@interface SOSExampleOnboardingViewController : SOSOnboardingBaseViewController
 
 @end

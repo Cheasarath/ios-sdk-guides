@@ -28,54 +28,59 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "AppDelegate.h"
+#import "SOSButton.h"
+#import "SOSExampleOnboardingViewController.h"
+#import "SOSExampleConnectingViewController.h"
+#import "SOSExampleScreenSharingViewController.h"
+
 #import <SCLAlertView-Objective-C/SCLAlertView.h>
 
 #import <SOS/SOS.h>
-#import <SOS/SOSError.h>
 
-@interface AppDelegate() <SOSDelegate>
-@end
+@implementation SOSButton
 
-@implementation AppDelegate
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesEnded:touches withEvent:event];
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[[SCServiceCloud sharedInstance] sos] addDelegate:self];
+    SOSSessionManager *sos = [[SCServiceCloud sharedInstance] sos];
 
-    return YES;
+    [sos startSessionWithOptions:[self options]];
 }
 
-- (void)sos:(SOSSessionManager *)sos didError:(NSError *)error {
-    NSString *description = [error localizedDescription];
+/**
+ *  Simple way to generate an SOSOptions object to be consumed by a session.
+ *  In our simple case we will grab this information from the SOSSettings.plist
+ *
+ *  @return an SOSOptions instance to be consumed by an SOS Session.
+ */
+- (SOSOptions *)options {
+
     NSString *path = [[NSBundle mainBundle] pathForResource:@"SOSSettings" ofType:@"plist"];
     NSDictionary *settings = [[NSDictionary alloc] initWithContentsOfFile:path];
     NSDictionary *configuredViewControllers = settings[@"Custom ViewControllers"];
 
-    // You can determine the type of error by looking at the error code, and comparing it to the enum present in SOSError.h
-    NSUInteger errorCode = [error code];
-    NSLog(@"Something went wrong: %@, SOSError code: %lu", description, (unsigned long)errorCode);
+    // NOTE: By default the valies in the SOSSettings.plist are not valid and will result in an error on session start.
+    // Be sure to change those to match the credentials provided to you.
+    SOSOptions *opts = [SOSOptions optionsWithLiveAgentPod:settings[@"Live Agent Pod"]
+                                                     orgId:settings[@"Salesforce Organization ID"]
+                                              deploymentId:settings[@"Deployment ID"]];
 
-    // You can do conditional error messages based on the type of error. Here we'll handle the No Agents Available error and display a custom message
-    switch (errorCode) {
-        case SOSNoAgentsAvailableError: {
-            description = @"Hey it looks like there are no agents available. Please try again later!";
-            break;
-        }
-        default: {
-            break;
-        }
+    [opts setFeatureClientBackCameraEnabled:YES];
+    [opts setFeatureClientFrontCameraEnabled:YES];
+
+    if ([configuredViewControllers[@"Onboarding"] boolValue]) {
+        [opts setViewControllerClass:[SOSExampleOnboardingViewController class] for:SOSUIPhaseOnboarding];
     }
 
-    if ([configuredViewControllers[@"Errors"] boolValue]) {
-        // Use a custom class to handle alerts.
-        SCLAlertView *alertView = [[SCLAlertView alloc] initWithNewWindow];
-        [alertView showError:@"Something went wrong!" subTitle:description closeButtonTitle:@"Dismiss" duration:0.0f];
-
-    } else {
-        // Use generic alert controller
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"SOS" message:description delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alertView show];
+    if ([configuredViewControllers[@"Connecting"] boolValue]) {
+        [opts setViewControllerClass:[SOSExampleConnectingViewController class] for:SOSUIPhaseConnecting];
     }
+
+    if ([configuredViewControllers[@"Screen Sharing"] boolValue]) {
+        [opts setViewControllerClass:[SOSExampleScreenSharingViewController class] for:SOSUIPhaseScreenSharing];
+    }
+
+    return opts;
 }
 
 @end

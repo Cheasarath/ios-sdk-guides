@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014, GoInstant Inc., a salesforce.com company
+ * Copyright © salesforce.com, inc. 2014-2016
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
@@ -12,7 +12,7 @@
  * list of conditions and the following disclaimer in the documentation and/or
  * other materials provided with the distribution.
  *
- * Neither the name of the {organization} nor the names of its
+ * Neither the name of salesforce.com nor the names of its
  * contributors may be used to endorse or promote products derived from
  * this software without specific prior written permission.
  *
@@ -28,15 +28,11 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "SOSButton.h"
-#import "SOSGuidesApplication.h"
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 #import <SOS/SOS.h>
 
-@implementation SOSButton
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-  [super touchesEnded:touches withEvent:event];
-  [[SOSGuidesApplication sharedInstance] startSession];
-}
+@interface SOSExampleScreenSharingViewController : SOSScreenSharingBaseViewController
 
 @end

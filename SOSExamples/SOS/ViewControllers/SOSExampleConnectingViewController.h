@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014, GoInstant Inc., a salesforce.com company
+ * Copyright © salesforce.com, inc. 2014-2016
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
@@ -12,7 +12,7 @@
  * list of conditions and the following disclaimer in the documentation and/or
  * other materials provided with the distribution.
  *
- * Neither the name of the {organization} nor the names of its
+ * Neither the name of salesforce.com nor the names of its
  * contributors may be used to endorse or promote products derived from
  * this software without specific prior written permission.
  *
@@ -28,18 +28,11 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-/**
- *  Simple class which adds some UIAlert like behavior. This is meant to demonstrate custom skinning
- *  of SOS. it is not intended as a complete replacement for UIAlert.
- */
-@interface SOSExampleAlert : UIView
+#import <SOS/SOS.h>
 
-@property (weak, nonatomic) IBOutlet UILabel *lblAlertMessage;
-@property (weak, nonatomic) IBOutlet UIButton *btnOK;
-@property (weak, nonatomic) IBOutlet UIButton *btnCancel;
-
-- (void)showWithMessage:(NSString *)message completion:(void(^)(BOOL ok))block;
+@interface SOSExampleConnectingViewController : SOSConnectingBaseViewController
 
 @end

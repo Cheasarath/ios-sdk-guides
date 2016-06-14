@@ -7,91 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		016221D219E6F0E30090DDFB /* LaunchImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016221D119E6F0E30090DDFB /* LaunchImage.xib */; };
-		01A6DDCD19E6D6C600CC74E9 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A6DDCC19E6D6C600CC74E9 /* ProfileViewController.m */; };
-		042AC9CC1CC1609500D1889A /* LaunchImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016221D119E6F0E30090DDFB /* LaunchImage.xib */; };
-		38D19D03ED92CDECC5D1C234 /* libPods-2. Customize (Basic).a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A5C7570AEA04C83C3D8D43E /* libPods-2. Customize (Basic).a */; };
-		F269BEFA198012E7001E69D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F269BEF9198012E7001E69D7 /* Foundation.framework */; };
-		F269BEFC198012E7001E69D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F269BEFB198012E7001E69D7 /* CoreGraphics.framework */; };
-		F269BEFE198012E7001E69D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F269BEFD198012E7001E69D7 /* UIKit.framework */; };
-		F269BF04198012E7001E69D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F269BF02198012E7001E69D7 /* InfoPlist.strings */; };
-		F269BF06198012E7001E69D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F269BF05198012E7001E69D7 /* main.m */; };
-		F269BF0A198012E7001E69D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F269BF09198012E7001E69D7 /* AppDelegate.m */; };
-		F269BF0D198012E7001E69D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F269BF0B198012E7001E69D7 /* Main.storyboard */; };
-		F269BF10198012E7001E69D7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F269BF0F198012E7001E69D7 /* ViewController.m */; };
-		F269BF12198012E7001E69D7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F269BF11198012E7001E69D7 /* Images.xcassets */; };
-		F269BF43198014A1001E69D7 /* compose_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF31198014A1001E69D7 /* compose_icon.png */; };
-		F269BF44198014A1001E69D7 /* compose_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF32198014A1001E69D7 /* compose_icon@2x.png */; };
-		F269BF45198014A1001E69D7 /* contact_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF33198014A1001E69D7 /* contact_icon.png */; };
-		F269BF46198014A1001E69D7 /* contact_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF34198014A1001E69D7 /* contact_icon@2x.png */; };
-		F269BF47198014A1001E69D7 /* contact_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF35198014A1001E69D7 /* contact_profile.png */; };
-		F269BF48198014A1001E69D7 /* contact_profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF36198014A1001E69D7 /* contact_profile@2x.png */; };
-		F269BF49198014A1001E69D7 /* Home.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF37198014A1001E69D7 /* Home.png */; };
-		F269BF4A198014A1001E69D7 /* Home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF38198014A1001E69D7 /* Home@2x.png */; };
-		F269BF4B198014A1001E69D7 /* Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF39198014A1001E69D7 /* Profile.png */; };
-		F269BF4C198014A1001E69D7 /* Profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF3A198014A1001E69D7 /* Profile@2x.png */; };
-		F269BF4D198014A1001E69D7 /* sos_button_large.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF3B198014A1001E69D7 /* sos_button_large.png */; };
-		F269BF4E198014A1001E69D7 /* sos_button_large@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF3C198014A1001E69D7 /* sos_button_large@2x.png */; };
-		F269BF4F198014A1001E69D7 /* sos_button.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF3D198014A1001E69D7 /* sos_button.png */; };
-		F269BF50198014A1001E69D7 /* sos_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF3E198014A1001E69D7 /* sos_button@2x.png */; };
-		F269BF51198014A1001E69D7 /* user_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF3F198014A1001E69D7 /* user_icon.png */; };
-		F269BF52198014A1001E69D7 /* user_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF40198014A1001E69D7 /* user_icon@2x.png */; };
-		F269BF5619802C74001E69D7 /* ContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F269BF5519802C74001E69D7 /* ContactsTableViewController.m */; };
-		F2B1679A19816D3F00A91FC4 /* SOSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B1679919816D3F00A91FC4 /* SOSButton.m */; };
-		F2B167A019817A2500A91FC4 /* SOSGuidesApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B1679F19817A2500A91FC4 /* SOSGuidesApplication.m */; };
-		F2B167A41981934300A91FC4 /* SOSSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2B167A31981934300A91FC4 /* SOSSettings.plist */; };
-		F2BA14D51A1F86DE00666D98 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A6DDCC19E6D6C600CC74E9 /* ProfileViewController.m */; };
-		F2C0F1911982EA3500A2D678 /* SOSExampleAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C0F1901982EA3500A2D678 /* SOSExampleAlert.xib */; };
-		F2C0F1921982EA3500A2D678 /* SOSExampleAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C0F1901982EA3500A2D678 /* SOSExampleAlert.xib */; };
-		F2C0F1951982F24700A2D678 /* SOSExampleNotification.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C0F1941982F24700A2D678 /* SOSExampleNotification.xib */; };
-		F2C0F1961982F24700A2D678 /* SOSExampleNotification.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C0F1941982F24700A2D678 /* SOSExampleNotification.xib */; };
-		F2C0F19A1982F61B00A2D678 /* SOSExampleAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C0F1991982F61B00A2D678 /* SOSExampleAlert.m */; };
-		F2C0F19B1982F61B00A2D678 /* SOSExampleAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C0F1991982F61B00A2D678 /* SOSExampleAlert.m */; };
-		F2C0F19F1982F62F00A2D678 /* SOSExampleNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C0F19E1982F62F00A2D678 /* SOSExampleNotification.m */; };
-		F2C0F1A01982F62F00A2D678 /* SOSExampleNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C0F19E1982F62F00A2D678 /* SOSExampleNotification.m */; };
-		F2F0D7A8198295EF00B14C39 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F269BF0F198012E7001E69D7 /* ViewController.m */; };
-		F2F0D7A9198295EF00B14C39 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F269BF09198012E7001E69D7 /* AppDelegate.m */; };
-		F2F0D7AA198295EF00B14C39 /* SOSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B1679919816D3F00A91FC4 /* SOSButton.m */; };
-		F2F0D7AB198295EF00B14C39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F269BF05198012E7001E69D7 /* main.m */; };
-		F2F0D7AD198295EF00B14C39 /* ContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F269BF5519802C74001E69D7 /* ContactsTableViewController.m */; };
-		F2F0D7AF198295EF00B14C39 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F269BEFB198012E7001E69D7 /* CoreGraphics.framework */; };
-		F2F0D7B0198295EF00B14C39 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F269BEFD198012E7001E69D7 /* UIKit.framework */; };
-		F2F0D7B1198295EF00B14C39 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F269BEF9198012E7001E69D7 /* Foundation.framework */; };
-		F2F0D7B4198295EF00B14C39 /* Home.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF37198014A1001E69D7 /* Home.png */; };
-		F2F0D7B5198295EF00B14C39 /* sos_button_large.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF3B198014A1001E69D7 /* sos_button_large.png */; };
-		F2F0D7B6198295EF00B14C39 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F269BF11198012E7001E69D7 /* Images.xcassets */; };
-		F2F0D7B7198295EF00B14C39 /* SOSSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2B167A31981934300A91FC4 /* SOSSettings.plist */; };
-		F2F0D7B8198295EF00B14C39 /* compose_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF31198014A1001E69D7 /* compose_icon.png */; };
-		F2F0D7B9198295EF00B14C39 /* sos_button_large@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF3C198014A1001E69D7 /* sos_button_large@2x.png */; };
-		F2F0D7BA198295EF00B14C39 /* Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF39198014A1001E69D7 /* Profile.png */; };
-		F2F0D7BB198295EF00B14C39 /* contact_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF35198014A1001E69D7 /* contact_profile.png */; };
-		F2F0D7BC198295EF00B14C39 /* contact_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF34198014A1001E69D7 /* contact_icon@2x.png */; };
-		F2F0D7BD198295EF00B14C39 /* compose_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF32198014A1001E69D7 /* compose_icon@2x.png */; };
-		F2F0D7BE198295EF00B14C39 /* sos_button.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF3D198014A1001E69D7 /* sos_button.png */; };
-		F2F0D7BF198295EF00B14C39 /* Home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF38198014A1001E69D7 /* Home@2x.png */; };
-		F2F0D7C0198295EF00B14C39 /* sos_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF3E198014A1001E69D7 /* sos_button@2x.png */; };
-		F2F0D7C2198295EF00B14C39 /* user_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF40198014A1001E69D7 /* user_icon@2x.png */; };
-		F2F0D7C3198295EF00B14C39 /* Profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF3A198014A1001E69D7 /* Profile@2x.png */; };
-		F2F0D7C4198295EF00B14C39 /* contact_profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF36198014A1001E69D7 /* contact_profile@2x.png */; };
-		F2F0D7C5198295EF00B14C39 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F269BF02198012E7001E69D7 /* InfoPlist.strings */; };
-		F2F0D7C7198295EF00B14C39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F269BF0B198012E7001E69D7 /* Main.storyboard */; };
-		F2F0D7C8198295EF00B14C39 /* contact_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF33198014A1001E69D7 /* contact_icon.png */; };
-		F2F0D7C9198295EF00B14C39 /* user_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF3F198014A1001E69D7 /* user_icon.png */; };
-		F2F0D80019829B8E00B14C39 /* SOSGuidesApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F0D7FF19829B8E00B14C39 /* SOSGuidesApplication.m */; };
-		FAFF367A02FA41C89FEFC55F /* libPods-1. Integrate SOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 588B0E1C529DB8C592B9411C /* libPods-1. Integrate SOS.a */; };
+		7F5C7A59168AE9FB2B720025 /* libPods-SOSExamples.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F271BE4B7E08D65AF16404 /* libPods-SOSExamples.a */; };
+		F2234E3B1D109C8800B5AABB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F2234E3A1D109C8800B5AABB /* main.m */; };
+		F2234E3C1D109F4E00B5AABB /* compose_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF31198014A1001E69D7 /* compose_icon.png */; };
+		F2234E3D1D109F4E00B5AABB /* compose_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF32198014A1001E69D7 /* compose_icon@2x.png */; };
+		F2234E3E1D109F4E00B5AABB /* contact_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF33198014A1001E69D7 /* contact_icon.png */; };
+		F2234E3F1D109F4E00B5AABB /* contact_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF34198014A1001E69D7 /* contact_icon@2x.png */; };
+		F2234E401D109F4E00B5AABB /* contact_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF35198014A1001E69D7 /* contact_profile.png */; };
+		F2234E411D109F4E00B5AABB /* contact_profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF36198014A1001E69D7 /* contact_profile@2x.png */; };
+		F2234E421D109F4E00B5AABB /* Home.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF37198014A1001E69D7 /* Home.png */; };
+		F2234E431D109F4E00B5AABB /* Home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF38198014A1001E69D7 /* Home@2x.png */; };
+		F2234E441D109F4E00B5AABB /* Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF39198014A1001E69D7 /* Profile.png */; };
+		F2234E451D109F4E00B5AABB /* Profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF3A198014A1001E69D7 /* Profile@2x.png */; };
+		F2234E461D109F4E00B5AABB /* sos_button_large.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF3B198014A1001E69D7 /* sos_button_large.png */; };
+		F2234E471D109F4E00B5AABB /* sos_button_large@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF3C198014A1001E69D7 /* sos_button_large@2x.png */; };
+		F2234E481D109F4E00B5AABB /* sos_button.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF3D198014A1001E69D7 /* sos_button.png */; };
+		F2234E491D109F4E00B5AABB /* sos_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF3E198014A1001E69D7 /* sos_button@2x.png */; };
+		F2234E4A1D109F4E00B5AABB /* user_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF3F198014A1001E69D7 /* user_icon.png */; };
+		F2234E4B1D109F4E00B5AABB /* user_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F269BF40198014A1001E69D7 /* user_icon@2x.png */; };
+		F2234E4C1D10A01B00B5AABB /* ContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F269BF5519802C74001E69D7 /* ContactsTableViewController.m */; };
+		F2234E4D1D10A01E00B5AABB /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A6DDCC19E6D6C600CC74E9 /* ProfileViewController.m */; };
+		F2234E511D11A14600B5AABB /* SOSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F2234E501D11A14600B5AABB /* SOSButton.m */; };
+		F2234E521D11B9E200B5AABB /* SOSSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2B167A31981934300A91FC4 /* SOSSettings.plist */; };
+		F2F81FD11D108A7C001C53A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F269BF09198012E7001E69D7 /* AppDelegate.m */; };
+		F2F81FD21D108A7E001C53A5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F269BF0F198012E7001E69D7 /* ViewController.m */; };
+		F2F81FD31D108A82001C53A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F269BF0B198012E7001E69D7 /* Main.storyboard */; };
+		F2F81FD41D108A83001C53A5 /* LaunchImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016221D119E6F0E30090DDFB /* LaunchImage.xib */; };
+		F2F81FD51D108A85001C53A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F269BF11198012E7001E69D7 /* Images.xcassets */; };
+		F2F81FD91D108B66001C53A5 /* SOSExampleOnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F81FD81D108B66001C53A5 /* SOSExampleOnboardingViewController.m */; };
+		F2F81FDC1D108E5D001C53A5 /* SOSExampleConnectingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F81FDB1D108E5D001C53A5 /* SOSExampleConnectingViewController.m */; };
+		F2F81FDF1D108E72001C53A5 /* SOSExampleScreenSharingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F81FDE1D108E72001C53A5 /* SOSExampleScreenSharingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		016221D119E6F0E30090DDFB /* LaunchImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchImage.xib; sourceTree = "<group>"; };
 		01A6DDCB19E6D6C600CC74E9 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		01A6DDCC19E6D6C600CC74E9 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		2A5C7570AEA04C83C3D8D43E /* libPods-2. Customize (Basic).a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-2. Customize (Basic).a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5523830FE8D1A956D824B46F /* Pods-2. Customize (Basic).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2. Customize (Basic).debug.xcconfig"; path = "Pods/Target Support Files/Pods-2. Customize (Basic)/Pods-2. Customize (Basic).debug.xcconfig"; sourceTree = "<group>"; };
-		588B0E1C529DB8C592B9411C /* libPods-1. Integrate SOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-1. Integrate SOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		74AACD1767767A79F2DF23D5 /* Pods-2. Customize (Basic).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2. Customize (Basic).release.xcconfig"; path = "Pods/Target Support Files/Pods-2. Customize (Basic)/Pods-2. Customize (Basic).release.xcconfig"; sourceTree = "<group>"; };
-		93AF150E10D4B297967A5E99 /* Pods-1. Integrate SOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-1. Integrate SOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-1. Integrate SOS/Pods-1. Integrate SOS.release.xcconfig"; sourceTree = "<group>"; };
-		C331A4D085D1B0331FD9E713 /* Pods-1. Integrate SOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-1. Integrate SOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-1. Integrate SOS/Pods-1. Integrate SOS.debug.xcconfig"; sourceTree = "<group>"; };
-		F269BEF6198012E7001E69D7 /* 1. Integrate SOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "1. Integrate SOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		54CF9D4109FE7EB1005656D3 /* Pods-SOSExamples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SOSExamples.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SOSExamples/Pods-SOSExamples.debug.xcconfig"; sourceTree = "<group>"; };
+		D2F271BE4B7E08D65AF16404 /* libPods-SOSExamples.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SOSExamples.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2234E3A1D109C8800B5AABB /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F2234E4F1D11A14600B5AABB /* SOSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOSButton.h; path = SOS/Views/SOSButton.h; sourceTree = "<group>"; };
+		F2234E501D11A14600B5AABB /* SOSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOSButton.m; path = SOS/Views/SOSButton.m; sourceTree = "<group>"; };
 		F269BEF9198012E7001E69D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F269BEFB198012E7001E69D7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F269BEFD198012E7001E69D7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -105,7 +61,6 @@
 		F269BF0E198012E7001E69D7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F269BF0F198012E7001E69D7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F269BF11198012E7001E69D7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		F269BF18198012E7001E69D7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F269BF31198014A1001E69D7 /* compose_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = compose_icon.png; path = Assets/compose_icon.png; sourceTree = "<group>"; };
 		F269BF32198014A1001E69D7 /* compose_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "compose_icon@2x.png"; path = "Assets/compose_icon@2x.png"; sourceTree = "<group>"; };
 		F269BF33198014A1001E69D7 /* contact_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = contact_icon.png; path = Assets/contact_icon.png; sourceTree = "<group>"; };
@@ -124,77 +79,62 @@
 		F269BF40198014A1001E69D7 /* user_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "user_icon@2x.png"; path = "Assets/user_icon@2x.png"; sourceTree = "<group>"; };
 		F269BF5419802C74001E69D7 /* ContactsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsTableViewController.h; sourceTree = "<group>"; };
 		F269BF5519802C74001E69D7 /* ContactsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsTableViewController.m; sourceTree = "<group>"; };
-		F2B1679819816D3F00A91FC4 /* SOSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOSButton.h; path = SOS/SOSButton.h; sourceTree = "<group>"; };
-		F2B1679919816D3F00A91FC4 /* SOSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOSButton.m; path = SOS/SOSButton.m; sourceTree = "<group>"; };
-		F2B1679B19816D8C00A91FC4 /* SOSGuidesApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOSGuidesApplication.h; sourceTree = "<group>"; };
-		F2B1679F19817A2500A91FC4 /* SOSGuidesApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOSGuidesApplication.m; path = "Guides/integrate-sos/SOSGuidesApplication.m"; sourceTree = "<group>"; };
 		F2B167A31981934300A91FC4 /* SOSSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SOSSettings.plist; path = SOSExamples/SOSSettings.plist; sourceTree = "<group>"; };
-		F2C0F1901982EA3500A2D678 /* SOSExampleAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SOSExampleAlert.xib; sourceTree = "<group>"; };
-		F2C0F1941982F24700A2D678 /* SOSExampleNotification.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SOSExampleNotification.xib; sourceTree = "<group>"; };
-		F2C0F1981982F61B00A2D678 /* SOSExampleAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOSExampleAlert.h; path = SOS/SOSExampleAlert.h; sourceTree = "<group>"; };
-		F2C0F1991982F61B00A2D678 /* SOSExampleAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOSExampleAlert.m; path = SOS/SOSExampleAlert.m; sourceTree = "<group>"; };
-		F2C0F19D1982F62F00A2D678 /* SOSExampleNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOSExampleNotification.h; sourceTree = "<group>"; };
-		F2C0F19E1982F62F00A2D678 /* SOSExampleNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOSExampleNotification.m; sourceTree = "<group>"; };
-		F2F0D7CE198295EF00B14C39 /* 2. Customize (Basic).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2. Customize (Basic).app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2F0D7FF19829B8E00B14C39 /* SOSGuidesApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOSGuidesApplication.m; path = "Guides/customize-basic/SOSGuidesApplication.m"; sourceTree = "<group>"; };
-		F2F87FD419A7A27600D6D515 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
+		F2F81FBA1D108A10001C53A5 /* SOSExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOSExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2F81FD71D108B66001C53A5 /* SOSExampleOnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOSExampleOnboardingViewController.h; path = SOS/ViewControllers/SOSExampleOnboardingViewController.h; sourceTree = "<group>"; };
+		F2F81FD81D108B66001C53A5 /* SOSExampleOnboardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOSExampleOnboardingViewController.m; path = SOS/ViewControllers/SOSExampleOnboardingViewController.m; sourceTree = "<group>"; };
+		F2F81FDA1D108E5D001C53A5 /* SOSExampleConnectingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOSExampleConnectingViewController.h; path = SOS/ViewControllers/SOSExampleConnectingViewController.h; sourceTree = "<group>"; };
+		F2F81FDB1D108E5D001C53A5 /* SOSExampleConnectingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOSExampleConnectingViewController.m; path = SOS/ViewControllers/SOSExampleConnectingViewController.m; sourceTree = "<group>"; };
+		F2F81FDD1D108E72001C53A5 /* SOSExampleScreenSharingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOSExampleScreenSharingViewController.h; path = SOS/ViewControllers/SOSExampleScreenSharingViewController.h; sourceTree = "<group>"; };
+		F2F81FDE1D108E72001C53A5 /* SOSExampleScreenSharingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOSExampleScreenSharingViewController.m; path = SOS/ViewControllers/SOSExampleScreenSharingViewController.m; sourceTree = "<group>"; };
+		F7C7E41A084C78E781D6FE09 /* Pods-SOSExamples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SOSExamples.release.xcconfig"; path = "Pods/Target Support Files/Pods-SOSExamples/Pods-SOSExamples.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F269BEF3198012E7001E69D7 /* Frameworks */ = {
+		F2F81FB71D108A10001C53A5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F269BEFC198012E7001E69D7 /* CoreGraphics.framework in Frameworks */,
-				F269BEFE198012E7001E69D7 /* UIKit.framework in Frameworks */,
-				F269BEFA198012E7001E69D7 /* Foundation.framework in Frameworks */,
-				FAFF367A02FA41C89FEFC55F /* libPods-1. Integrate SOS.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F2F0D7AE198295EF00B14C39 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F2F0D7AF198295EF00B14C39 /* CoreGraphics.framework in Frameworks */,
-				F2F0D7B0198295EF00B14C39 /* UIKit.framework in Frameworks */,
-				F2F0D7B1198295EF00B14C39 /* Foundation.framework in Frameworks */,
-				38D19D03ED92CDECC5D1C234 /* libPods-2. Customize (Basic).a in Frameworks */,
+				7F5C7A59168AE9FB2B720025 /* libPods-SOSExamples.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B2613A459C02679EAD8D6158 /* Pods */ = {
+		4736CE1B1727BF51A7BADB2E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C331A4D085D1B0331FD9E713 /* Pods-1. Integrate SOS.debug.xcconfig */,
-				93AF150E10D4B297967A5E99 /* Pods-1. Integrate SOS.release.xcconfig */,
-				5523830FE8D1A956D824B46F /* Pods-2. Customize (Basic).debug.xcconfig */,
-				74AACD1767767A79F2DF23D5 /* Pods-2. Customize (Basic).release.xcconfig */,
+				54CF9D4109FE7EB1005656D3 /* Pods-SOSExamples.debug.xcconfig */,
+				F7C7E41A084C78E781D6FE09 /* Pods-SOSExamples.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F2234E4E1D11A11F00B5AABB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F2234E4F1D11A14600B5AABB /* SOSButton.h */,
+				F2234E501D11A14600B5AABB /* SOSButton.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		F269BEED198012E7001E69D7 = {
 			isa = PBXGroup;
 			children = (
 				F2B167A31981934300A91FC4 /* SOSSettings.plist */,
-				F2B1678D198139D000A91FC4 /* 1. Integrate SOS */,
-				F2F0D7FB198298F000B14C39 /* 2. Customize (Basic) */,
 				F269BEFF198012E7001E69D7 /* Common */,
 				F269BEF8198012E7001E69D7 /* Frameworks */,
 				F269BEF7198012E7001E69D7 /* Products */,
-				B2613A459C02679EAD8D6158 /* Pods */,
+				4736CE1B1727BF51A7BADB2E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		F269BEF7198012E7001E69D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F269BEF6198012E7001E69D7 /* 1. Integrate SOS.app */,
-				F2F0D7CE198295EF00B14C39 /* 2. Customize (Basic).app */,
+				F2F81FBA1D108A10001C53A5 /* SOSExamples.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,13 +142,10 @@
 		F269BEF8198012E7001E69D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F2F87FD419A7A27600D6D515 /* libstdc++.6.dylib */,
 				F269BEF9198012E7001E69D7 /* Foundation.framework */,
 				F269BEFB198012E7001E69D7 /* CoreGraphics.framework */,
 				F269BEFD198012E7001E69D7 /* UIKit.framework */,
-				F269BF18198012E7001E69D7 /* XCTest.framework */,
-				588B0E1C529DB8C592B9411C /* libPods-1. Integrate SOS.a */,
-				2A5C7570AEA04C83C3D8D43E /* libPods-2. Customize (Basic).a */,
+				D2F271BE4B7E08D65AF16404 /* libPods-SOSExamples.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -224,6 +161,7 @@
 				F269BF09198012E7001E69D7 /* AppDelegate.m */,
 				F269BF0E198012E7001E69D7 /* ViewController.h */,
 				F269BF0F198012E7001E69D7 /* ViewController.m */,
+				F2234E3A1D109C8800B5AABB /* main.m */,
 				F269BF11198012E7001E69D7 /* Images.xcassets */,
 				016221D119E6F0E30090DDFB /* LaunchImage.xib */,
 				F269BF0B198012E7001E69D7 /* Main.storyboard */,
@@ -277,79 +215,49 @@
 			name = "Custom View Controllers";
 			sourceTree = "<group>";
 		};
-		F2B1678D198139D000A91FC4 /* 1. Integrate SOS */ = {
-			isa = PBXGroup;
-			children = (
-				F2B1679F19817A2500A91FC4 /* SOSGuidesApplication.m */,
-			);
-			name = "1. Integrate SOS";
-			sourceTree = "<group>";
-		};
 		F2B1678E19813B9200A91FC4 /* SOS */ = {
 			isa = PBXGroup;
 			children = (
-				F2C0F1901982EA3500A2D678 /* SOSExampleAlert.xib */,
-				F2C0F1941982F24700A2D678 /* SOSExampleNotification.xib */,
-				F2B1679819816D3F00A91FC4 /* SOSButton.h */,
-				F2B1679919816D3F00A91FC4 /* SOSButton.m */,
-				F2B1679B19816D8C00A91FC4 /* SOSGuidesApplication.h */,
-				F2C0F1981982F61B00A2D678 /* SOSExampleAlert.h */,
-				F2C0F1991982F61B00A2D678 /* SOSExampleAlert.m */,
-				F2C0F19D1982F62F00A2D678 /* SOSExampleNotification.h */,
-				F2C0F19E1982F62F00A2D678 /* SOSExampleNotification.m */,
+				F2234E4E1D11A11F00B5AABB /* Views */,
+				F2F81FD61D108B2D001C53A5 /* View Controllers */,
 			);
 			name = SOS;
 			sourceTree = "<group>";
 		};
-		F2F0D7FB198298F000B14C39 /* 2. Customize (Basic) */ = {
+		F2F81FD61D108B2D001C53A5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F2F0D7FF19829B8E00B14C39 /* SOSGuidesApplication.m */,
+				F2F81FD71D108B66001C53A5 /* SOSExampleOnboardingViewController.h */,
+				F2F81FD81D108B66001C53A5 /* SOSExampleOnboardingViewController.m */,
+				F2F81FDA1D108E5D001C53A5 /* SOSExampleConnectingViewController.h */,
+				F2F81FDB1D108E5D001C53A5 /* SOSExampleConnectingViewController.m */,
+				F2F81FDD1D108E72001C53A5 /* SOSExampleScreenSharingViewController.h */,
+				F2F81FDE1D108E72001C53A5 /* SOSExampleScreenSharingViewController.m */,
 			);
-			name = "2. Customize (Basic)";
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F269BEF5198012E7001E69D7 /* 1. Integrate SOS */ = {
+		F2F81FB91D108A10001C53A5 /* SOSExamples */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F269BF28198012E7001E69D7 /* Build configuration list for PBXNativeTarget "1. Integrate SOS" */;
+			buildConfigurationList = F2F81FCE1D108A10001C53A5 /* Build configuration list for PBXNativeTarget "SOSExamples" */;
 			buildPhases = (
-				B602E9BDFAA2D10EE6FF03D1 /* 📦 Check Pods Manifest.lock */,
-				F269BEF2198012E7001E69D7 /* Sources */,
-				F269BEF3198012E7001E69D7 /* Frameworks */,
-				F269BEF4198012E7001E69D7 /* Resources */,
-				27A9FEE534C1EB19F835DE6A /* 📦 Embed Pods Frameworks */,
-				4848A5629C453A259A0EAB40 /* 📦 Copy Pods Resources */,
+				E8EA6E5559DB393AB8C95CD5 /* [CP] Check Pods Manifest.lock */,
+				F2F81FB61D108A10001C53A5 /* Sources */,
+				F2F81FB71D108A10001C53A5 /* Frameworks */,
+				F2F81FB81D108A10001C53A5 /* Resources */,
+				7C5D3C7B413993374578AD8D /* [CP] Embed Pods Frameworks */,
+				9ADE1068B6CA30317872F982 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "1. Integrate SOS";
+			name = SOSExamples;
 			productName = SOSExamples;
-			productReference = F269BEF6198012E7001E69D7 /* 1. Integrate SOS.app */;
-			productType = "com.apple.product-type.application";
-		};
-		F2F0D7A5198295EF00B14C39 /* 2. Customize (Basic) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F2F0D7CB198295EF00B14C39 /* Build configuration list for PBXNativeTarget "2. Customize (Basic)" */;
-			buildPhases = (
-				4C6D5648A1CBCCED5B72A5E5 /* 📦 Check Pods Manifest.lock */,
-				F2F0D7A7198295EF00B14C39 /* Sources */,
-				F2F0D7AE198295EF00B14C39 /* Frameworks */,
-				F2F0D7B3198295EF00B14C39 /* Resources */,
-				612FE4F154FC39A29447621A /* 📦 Embed Pods Frameworks */,
-				99BFEB2C81097FE4457BC5E4 /* 📦 Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "2. Customize (Basic)";
-			productName = SOSExamples;
-			productReference = F2F0D7CE198295EF00B14C39 /* 2. Customize (Basic).app */;
+			productReference = F2F81FBA1D108A10001C53A5 /* SOSExamples.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -361,12 +269,8 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = goinstant;
 				TargetAttributes = {
-					F269BEF5198012E7001E69D7 = {
-						SystemCapabilities = {
-							com.apple.BackgroundModes = {
-								enabled = 1;
-							};
-						};
+					F2F81FB91D108A10001C53A5 = {
+						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
 			};
@@ -383,159 +287,80 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F269BEF5198012E7001E69D7 /* 1. Integrate SOS */,
-				F2F0D7A5198295EF00B14C39 /* 2. Customize (Basic) */,
+				F2F81FB91D108A10001C53A5 /* SOSExamples */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F269BEF4198012E7001E69D7 /* Resources */ = {
+		F2F81FB81D108A10001C53A5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F269BF49198014A1001E69D7 /* Home.png in Resources */,
-				F269BF4D198014A1001E69D7 /* sos_button_large.png in Resources */,
-				F269BF12198012E7001E69D7 /* Images.xcassets in Resources */,
-				F2C0F1951982F24700A2D678 /* SOSExampleNotification.xib in Resources */,
-				F2B167A41981934300A91FC4 /* SOSSettings.plist in Resources */,
-				F269BF43198014A1001E69D7 /* compose_icon.png in Resources */,
-				F269BF4E198014A1001E69D7 /* sos_button_large@2x.png in Resources */,
-				F269BF4B198014A1001E69D7 /* Profile.png in Resources */,
-				F269BF47198014A1001E69D7 /* contact_profile.png in Resources */,
-				016221D219E6F0E30090DDFB /* LaunchImage.xib in Resources */,
-				F269BF46198014A1001E69D7 /* contact_icon@2x.png in Resources */,
-				F269BF44198014A1001E69D7 /* compose_icon@2x.png in Resources */,
-				F2C0F1911982EA3500A2D678 /* SOSExampleAlert.xib in Resources */,
-				F269BF4F198014A1001E69D7 /* sos_button.png in Resources */,
-				F269BF4A198014A1001E69D7 /* Home@2x.png in Resources */,
-				F269BF50198014A1001E69D7 /* sos_button@2x.png in Resources */,
-				F269BF52198014A1001E69D7 /* user_icon@2x.png in Resources */,
-				F269BF4C198014A1001E69D7 /* Profile@2x.png in Resources */,
-				F269BF48198014A1001E69D7 /* contact_profile@2x.png in Resources */,
-				F269BF04198012E7001E69D7 /* InfoPlist.strings in Resources */,
-				F269BF0D198012E7001E69D7 /* Main.storyboard in Resources */,
-				F269BF45198014A1001E69D7 /* contact_icon.png in Resources */,
-				F269BF51198014A1001E69D7 /* user_icon.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F2F0D7B3198295EF00B14C39 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				042AC9CC1CC1609500D1889A /* LaunchImage.xib in Resources */,
-				F2F0D7B4198295EF00B14C39 /* Home.png in Resources */,
-				F2F0D7B5198295EF00B14C39 /* sos_button_large.png in Resources */,
-				F2F0D7B6198295EF00B14C39 /* Images.xcassets in Resources */,
-				F2C0F1961982F24700A2D678 /* SOSExampleNotification.xib in Resources */,
-				F2F0D7B7198295EF00B14C39 /* SOSSettings.plist in Resources */,
-				F2F0D7B8198295EF00B14C39 /* compose_icon.png in Resources */,
-				F2F0D7B9198295EF00B14C39 /* sos_button_large@2x.png in Resources */,
-				F2F0D7BA198295EF00B14C39 /* Profile.png in Resources */,
-				F2F0D7BB198295EF00B14C39 /* contact_profile.png in Resources */,
-				F2F0D7BC198295EF00B14C39 /* contact_icon@2x.png in Resources */,
-				F2F0D7BD198295EF00B14C39 /* compose_icon@2x.png in Resources */,
-				F2C0F1921982EA3500A2D678 /* SOSExampleAlert.xib in Resources */,
-				F2F0D7BE198295EF00B14C39 /* sos_button.png in Resources */,
-				F2F0D7BF198295EF00B14C39 /* Home@2x.png in Resources */,
-				F2F0D7C0198295EF00B14C39 /* sos_button@2x.png in Resources */,
-				F2F0D7C2198295EF00B14C39 /* user_icon@2x.png in Resources */,
-				F2F0D7C3198295EF00B14C39 /* Profile@2x.png in Resources */,
-				F2F0D7C4198295EF00B14C39 /* contact_profile@2x.png in Resources */,
-				F2F0D7C5198295EF00B14C39 /* InfoPlist.strings in Resources */,
-				F2F0D7C7198295EF00B14C39 /* Main.storyboard in Resources */,
-				F2F0D7C8198295EF00B14C39 /* contact_icon.png in Resources */,
-				F2F0D7C9198295EF00B14C39 /* user_icon.png in Resources */,
+				F2F81FD31D108A82001C53A5 /* Main.storyboard in Resources */,
+				F2234E481D109F4E00B5AABB /* sos_button.png in Resources */,
+				F2234E3E1D109F4E00B5AABB /* contact_icon.png in Resources */,
+				F2234E451D109F4E00B5AABB /* Profile@2x.png in Resources */,
+				F2234E521D11B9E200B5AABB /* SOSSettings.plist in Resources */,
+				F2234E421D109F4E00B5AABB /* Home.png in Resources */,
+				F2234E401D109F4E00B5AABB /* contact_profile.png in Resources */,
+				F2234E3F1D109F4E00B5AABB /* contact_icon@2x.png in Resources */,
+				F2234E411D109F4E00B5AABB /* contact_profile@2x.png in Resources */,
+				F2234E461D109F4E00B5AABB /* sos_button_large.png in Resources */,
+				F2234E4A1D109F4E00B5AABB /* user_icon.png in Resources */,
+				F2234E4B1D109F4E00B5AABB /* user_icon@2x.png in Resources */,
+				F2234E3C1D109F4E00B5AABB /* compose_icon.png in Resources */,
+				F2234E491D109F4E00B5AABB /* sos_button@2x.png in Resources */,
+				F2234E441D109F4E00B5AABB /* Profile.png in Resources */,
+				F2F81FD51D108A85001C53A5 /* Images.xcassets in Resources */,
+				F2F81FD41D108A83001C53A5 /* LaunchImage.xib in Resources */,
+				F2234E3D1D109F4E00B5AABB /* compose_icon@2x.png in Resources */,
+				F2234E471D109F4E00B5AABB /* sos_button_large@2x.png in Resources */,
+				F2234E431D109F4E00B5AABB /* Home@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		27A9FEE534C1EB19F835DE6A /* 📦 Embed Pods Frameworks */ = {
+		7C5D3C7B413993374578AD8D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-1. Integrate SOS/Pods-1. Integrate SOS-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SOSExamples/Pods-SOSExamples-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4848A5629C453A259A0EAB40 /* 📦 Copy Pods Resources */ = {
+		9ADE1068B6CA30317872F982 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-1. Integrate SOS/Pods-1. Integrate SOS-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SOSExamples/Pods-SOSExamples-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4C6D5648A1CBCCED5B72A5E5 /* 📦 Check Pods Manifest.lock */ = {
+		E8EA6E5559DB393AB8C95CD5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		612FE4F154FC39A29447621A /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2. Customize (Basic)/Pods-2. Customize (Basic)-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		99BFEB2C81097FE4457BC5E4 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-2. Customize (Basic)/Pods-2. Customize (Basic)-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B602E9BDFAA2D10EE6FF03D1 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -546,35 +371,19 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F269BEF2198012E7001E69D7 /* Sources */ = {
+		F2F81FB61D108A10001C53A5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2C0F19F1982F62F00A2D678 /* SOSExampleNotification.m in Sources */,
-				01A6DDCD19E6D6C600CC74E9 /* ProfileViewController.m in Sources */,
-				F269BF10198012E7001E69D7 /* ViewController.m in Sources */,
-				F269BF0A198012E7001E69D7 /* AppDelegate.m in Sources */,
-				F2B1679A19816D3F00A91FC4 /* SOSButton.m in Sources */,
-				F269BF06198012E7001E69D7 /* main.m in Sources */,
-				F2B167A019817A2500A91FC4 /* SOSGuidesApplication.m in Sources */,
-				F2C0F19A1982F61B00A2D678 /* SOSExampleAlert.m in Sources */,
-				F269BF5619802C74001E69D7 /* ContactsTableViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F2F0D7A7198295EF00B14C39 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F2C0F1A01982F62F00A2D678 /* SOSExampleNotification.m in Sources */,
-				F2BA14D51A1F86DE00666D98 /* ProfileViewController.m in Sources */,
-				F2F0D7A8198295EF00B14C39 /* ViewController.m in Sources */,
-				F2F0D7A9198295EF00B14C39 /* AppDelegate.m in Sources */,
-				F2F0D7AA198295EF00B14C39 /* SOSButton.m in Sources */,
-				F2F0D7AB198295EF00B14C39 /* main.m in Sources */,
-				F2F0D80019829B8E00B14C39 /* SOSGuidesApplication.m in Sources */,
-				F2C0F19B1982F61B00A2D678 /* SOSExampleAlert.m in Sources */,
-				F2F0D7AD198295EF00B14C39 /* ContactsTableViewController.m in Sources */,
+				F2F81FD11D108A7C001C53A5 /* AppDelegate.m in Sources */,
+				F2234E4D1D10A01E00B5AABB /* ProfileViewController.m in Sources */,
+				F2F81FD91D108B66001C53A5 /* SOSExampleOnboardingViewController.m in Sources */,
+				F2F81FD21D108A7E001C53A5 /* ViewController.m in Sources */,
+				F2F81FDF1D108E72001C53A5 /* SOSExampleScreenSharingViewController.m in Sources */,
+				F2234E3B1D109C8800B5AABB /* main.m in Sources */,
+				F2234E511D11A14600B5AABB /* SOSButton.m in Sources */,
+				F2234E4C1D10A01B00B5AABB /* ContactsTableViewController.m in Sources */,
+				F2F81FDC1D108E5D001C53A5 /* SOSExampleConnectingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,75 +482,46 @@
 			};
 			name = Release;
 		};
-		F269BF29198012E7001E69D7 /* Debug */ = {
+		F2F81FCF1D108A10001C53A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C331A4D085D1B0331FD9E713 /* Pods-1. Integrate SOS.debug.xcconfig */;
+			baseConfigurationReference = 54CF9D4109FE7EB1005656D3 /* Pods-SOSExamples.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "SOSExamples/SOSExamples-Prefix.pch";
 				INFOPLIST_FILE = "SOSExamples/SOSExamples-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.goinstant.${PRODUCT_NAME:rfc1034identifier}";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.salesforce.ServiceSDK.SOSExamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		F269BF2A198012E7001E69D7 /* Release */ = {
+		F2F81FD01D108A10001C53A5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93AF150E10D4B297967A5E99 /* Pods-1. Integrate SOS.release.xcconfig */;
+			baseConfigurationReference = F7C7E41A084C78E781D6FE09 /* Pods-SOSExamples.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "SOSExamples/SOSExamples-Prefix.pch";
 				INFOPLIST_FILE = "SOSExamples/SOSExamples-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.goinstant.${PRODUCT_NAME:rfc1034identifier}";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.salesforce.ServiceSDK.SOSExamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		F2F0D7CC198295EF00B14C39 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5523830FE8D1A956D824B46F /* Pods-2. Customize (Basic).debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SOSExamples/SOSExamples-Prefix.pch";
-				INFOPLIST_FILE = "SOSExamples/SOSExamples-Info.plist";
-				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.goinstant.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "2. Customize (Basic)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		F2F0D7CD198295EF00B14C39 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 74AACD1767767A79F2DF23D5 /* Pods-2. Customize (Basic).release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SOSExamples/SOSExamples-Prefix.pch";
-				INFOPLIST_FILE = "SOSExamples/SOSExamples-Info.plist";
-				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.goinstant.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "2. Customize (Basic)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
@@ -757,20 +537,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F269BF28198012E7001E69D7 /* Build configuration list for PBXNativeTarget "1. Integrate SOS" */ = {
+		F2F81FCE1D108A10001C53A5 /* Build configuration list for PBXNativeTarget "SOSExamples" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F269BF29198012E7001E69D7 /* Debug */,
-				F269BF2A198012E7001E69D7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F2F0D7CB198295EF00B14C39 /* Build configuration list for PBXNativeTarget "2. Customize (Basic)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F2F0D7CC198295EF00B14C39 /* Debug */,
-				F2F0D7CD198295EF00B14C39 /* Release */,
+				F2F81FCF1D108A10001C53A5 /* Debug */,
+				F2F81FD01D108A10001C53A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

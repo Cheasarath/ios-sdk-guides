@@ -2,13 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Custom ViewControllers</key>
+	<dict>
+		<key>Errors</key>
+		<false/>
+		<key>Onboarding</key>
+		<false/>
+		<key>Connecting</key>
+		<false/>
+		<key>Screen Sharing</key>
+		<false/>
+	</dict>
 	<key>Salesforce Organization ID</key>
-	<string>00DB00000001M9W</string>
-	<key>Email</key>
-	<string>info@salesforce.com</string>
-	<key>Live Agent Pod</key>
-	<string>d.la.gus.salesforce.com</string>
+	<string>Organization ID (15 Characters)</string>
 	<key>Deployment ID</key>
-	<string>0NWB0000000008e</string>
+	<string>Deployment ID (15 Characters)</string>
+	<key>Live Agent Pod</key>
+	<string>Live Agent API EndPoint (ie x.salesforceliveagent.com do not include https://)</string>
 </dict>
 </plist>
