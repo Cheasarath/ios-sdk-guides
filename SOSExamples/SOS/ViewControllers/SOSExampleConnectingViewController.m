@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014, GoInstant Inc., a salesforce.com company
+ * Copyright © salesforce.com, inc. 2014-2016
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
@@ -12,7 +12,7 @@
  * list of conditions and the following disclaimer in the documentation and/or
  * other materials provided with the distribution.
  *
- * Neither the name of the {organization} nor the names of its
+ * Neither the name of salesforce.com nor the names of its
  * contributors may be used to endorse or promote products derived from
  * this software without specific prior written permission.
  *
@@ -27,46 +27,33 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+#import "SOSExampleConnectingViewController.h"
+#import <SCLAlertView-Objective-C/SCLAlertView.h>
 
-#import "SOSExampleAlert.h"
+@interface SOSExampleConnectingViewController()
+@property SCLAlertView *alertView;
+@end
 
-typedef void (^Completion)(BOOL ok);
+@implementation SOSExampleConnectingViewController
 
-@implementation SOSExampleAlert {
-  Completion _block;
+- (void)loadView {
+    [super loadView];
+    _alertView = [SCLAlertView new];
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+- (void)initializingNotification {
+    [_alertView addButton:@"Cancel" target:self selector:@selector(handleEndSession:)];
+    [_alertView showWaiting:self title:@"Connecting" subTitle:@"SOS is booting up" closeButtonTitle:nil duration:0.0f];
 }
 
-- (void)showWithMessage:(NSString *)message completion:(void (^)(BOOL ok))block {
-  _block = block;
-  [_lblAlertMessage setText:message];
-  [self setHidden:NO];
+- (void)waitingForAgentNotification {
+    [_alertView dismissViewControllerAnimated:YES completion:nil];
+    [_alertView showWaiting:self title:@"Connecting" subTitle:@"SOS has created a session. Waiting for an agent to join" closeButtonTitle:@"HIDE" duration:0.0f];
 }
 
-- (IBAction)actionOK:(UIButton *)sender {
-  [self setHidden:YES];
-  [_lblAlertMessage setText:@""];
-  if (_block) {
-    _block(YES);
-    _block = nil;
-  }
-}
-
-- (IBAction)actionCancel:(id)sender {
-  [self setHidden:YES];
-  [_lblAlertMessage setText:@""];
-  if (_block) {
-    _block(NO);
-    _block = nil;
-  }
+- (void)agentJoinedNotification:(NSString *)name {
+    [_alertView dismissViewControllerAnimated:YES completion:nil];
+    [_alertView showWaiting:self title:@"Connecting" subTitle:@"An agent has joined your session. Your call will begin shortly" closeButtonTitle:nil duration:0.0f];
 }
 
 @end

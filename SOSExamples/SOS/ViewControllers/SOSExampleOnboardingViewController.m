@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014, GoInstant Inc., a salesforce.com company
+ * Copyright © salesforce.com, inc. 2014-2016
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
@@ -12,7 +12,7 @@
  * list of conditions and the following disclaimer in the documentation and/or
  * other materials provided with the distribution.
  *
- * Neither the name of the {organization} nor the names of its
+ * Neither the name of salesforce.com nor the names of its
  * contributors may be used to endorse or promote products derived from
  * this software without specific prior written permission.
  *
@@ -28,33 +28,24 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <Foundation/Foundation.h>
-#import "SOSExampleNotification.h"
+#import "SOSExampleOnboardingViewController.h"
+#import <SCLAlertView-Objective-C/SCLAlertView.h>
 
-@class SOSOptions;
+@implementation SOSExampleOnboardingViewController
 
-// This is a header file for an example SOS Application interface class.
-// Each target will have it's own implemenentation of this class. This is where the majority
-// of SOS specific code will live.
+// Optionally allows you to skip the onboarding phase entirely.
+// If you would prefer to allow a customer to jump directly into a session.
+- (BOOL)willHandleConnectionPrompt {
+    return YES;
+}
 
-/**
- * A simple example of encapsulating SOS calls to make accessing SOS from many view controllers easier.
- */
-@interface SOSGuidesApplication : NSObject
+- (void)connectionPromptRequested {
+    SCLAlertView *alertView = [SCLAlertView new];
 
-- (SOSOptions *)getSessionOptions;
+    [alertView addButton:@"YES" target:self selector:@selector(handleStartSession:)];   // SOS Expects this selector to be executed to move to the next phase.
+    [alertView addButton:@"NO" target:self selector:@selector(handleCancel:)];          // SOS Expects this selector to be executed to cancel and clean up.
 
-/**
- *  Provides a singleton instance to the SOS Application
- */
-+ (instancetype)sharedInstance;
-
-/**
- *  Start a session
- */
-- (void)startSession;
-
-
-@property (retain, nonatomic) SOSExampleNotification *notification;
+    [alertView showTitle:self title:@"Start an SOS Session?" subTitle:nil style:Question closeButtonTitle:nil duration:0.0f];
+}
 
 @end
