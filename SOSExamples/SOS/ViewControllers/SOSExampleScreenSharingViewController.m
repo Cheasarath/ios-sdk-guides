@@ -34,6 +34,8 @@
 @interface SOSExampleScreenSharingViewController ()
 
 @property (nonatomic, weak) UIView *drawView;
+@property (nonatomic, weak) UIView *agentStreamView;
+
 @property (nonatomic, strong) UIView *agentContainer;
 
 @end
@@ -67,40 +69,34 @@ static const CGFloat kAgentSize = 120.f;
     return NO;
 }
 
-- (void)viewDidLoad {
-    _agentContainer = [[UIView alloc] initWithFrame:CGRectMake(self.view.frame.size.width-kAgentSize, 0, kAgentSize, kAgentSize)];
-    [_agentContainer setBackgroundColor:[UIColor blackColor]];
-    [[self view] addSubview:_agentContainer];
-}
-
 - (void)didReceiveLineDrawView:(UIView * _Nonnull __weak)drawView {
     _drawView = drawView;
-    UIView *strongDrawView = drawView;
-
-    [strongDrawView setTranslatesAutoresizingMaskIntoConstraints:NO];
-
-    // If you set userInteractionEnabled to YES the drawing will clear on any touch.
-    [strongDrawView setUserInteractionEnabled:YES];
-
-    UIView *connection = [self view];
-
-    [connection addSubview:strongDrawView];
-    NSDictionary *views = NSDictionaryOfVariableBindings(strongDrawView);
-
-    // It's recommended that you apply constraints to ensure the draw view fills the entire screen. This is just an example
-    // Of how you can do that with visual formatting.
-    [connection addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[strongDrawView]|" options:0 metrics:nil views:views]];
-    [connection addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[strongDrawView]|" options:0 metrics:nil views:views]];
 }
 
 - (void)didReceiveAgentStreamView:(UIView * _Nonnull __weak)agentStreamView {
-    [agentStreamView setFrame:CGRectMake(0, 0, kAgentSize, kAgentSize)];
-    [_agentContainer addSubview:agentStreamView];
+    _agentStreamView = agentStreamView;
+    [_agentStreamView setFrame:CGRectMake(0, 0, kAgentSize, kAgentSize)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
+    _agentContainer = [[UIView alloc] initWithFrame:CGRectMake(self.view.frame.size.width-kAgentSize, 0, kAgentSize, kAgentSize)];
+    [_agentContainer setBackgroundColor:[UIColor blackColor]];
+    [_agentContainer addSubview:_agentStreamView];
+
+    [_drawView setTranslatesAutoresizingMaskIntoConstraints:NO];
+
+    // If you set userInteractionEnabled to YES the drawing will clear on any touch.
+    [_drawView setUserInteractionEnabled:YES];
+    [_drawView setFrame:[self view].frame];
+
+    [self setupToolBar];
+    [[self view] addSubview:_agentContainer];
+    [[self view] addSubview:_drawView];
+}
+
+- (void)setupToolBar {
     UIToolbar* toolbar = [[UIToolbar alloc] init];
     toolbar.frame = CGRectMake(0, self.view.frame.size.height - 44, self.view.frame.size.width, 44);
 
@@ -108,7 +104,7 @@ static const CGFloat kAgentSize = 120.f;
     UIBarButtonItem *pauseButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause target:self action:@selector(handlePause:)];
     UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(handleCameraTransition:)];
     UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(handleClose)];
-    
+
     UIBarButtonItem *muteButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Microphone"] style:UIBarButtonItemStylePlain target:self action:@selector(handleMute:)];
     UIBarButtonItem *drawButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Drawing"] style:UIBarButtonItemStylePlain target:self action:@selector(toggleDrawing)];
     UIBarButtonItem *agentButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"AgentVideo"] style:UIBarButtonItemStylePlain target:self action:@selector(toggleAgent)];
@@ -121,6 +117,10 @@ static const CGFloat kAgentSize = 120.f;
 
 - (void)toggleDrawing {
     [_drawView setHidden:![_drawView isHidden]];
+    SCLAlertView *alertView = [SCLAlertView new];
+
+    NSString *message = [NSString stringWithFormat:@"Line drawing is %@!", [_drawView isHidden] ? @"hidden" : @"visible"];
+    [alertView showInfo:self title:@"SOS" subTitle:message closeButtonTitle:@"OK" duration:1.0f];
 }
 
 - (void)toggleAgent {

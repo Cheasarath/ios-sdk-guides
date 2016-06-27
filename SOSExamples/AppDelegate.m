@@ -45,7 +45,15 @@
     return YES;
 }
 
+// All errors will come through this method. You can log them or ignore them. If you only wish to handle fatal errors you can use
+// [SOSDelegate sos:didStopWithReason:error:].
 - (void)sos:(SOSSessionManager *)sos didError:(NSError *)error {
+    NSLog(@"Logged an error: %@", error);
+}
+
+// You can check for fatal errors with this delegate method. Any error which results in [SOSDelegate sos:didStopWithReason:error:] being
+// executed is considered fatal.
+- (void)sos:(SOSSessionManager *)sos didStopWithReason:(SOSStopReason)reason error:(NSError *)error {
     NSString *description = [error localizedDescription];
     NSString *path = [[NSBundle mainBundle] pathForResource:@"SOSSettings" ofType:@"plist"];
     NSDictionary *settings = [[NSDictionary alloc] initWithContentsOfFile:path];
