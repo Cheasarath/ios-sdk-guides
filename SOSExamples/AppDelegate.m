@@ -54,19 +54,68 @@
 // You can check for fatal errors with this delegate method. Any error which results in [SOSDelegate sos:didStopWithReason:error:] being
 // executed is considered fatal.
 - (void)sos:(SOSSessionManager *)sos didStopWithReason:(SOSStopReason)reason error:(NSError *)error {
-    NSString *description = [error localizedDescription];
+    [self handleNormalStop:reason];
+    [self handleError:error];
+}
+
+- (void)handleNormalStop:(SOSStopReason)reason {
+    NSString *description = nil;
+
     NSString *path = [[NSBundle mainBundle] pathForResource:@"SOSSettings" ofType:@"plist"];
     NSDictionary *settings = [[NSDictionary alloc] initWithContentsOfFile:path];
     NSDictionary *configuredViewControllers = settings[@"Custom ViewControllers"];
 
-    // You can determine the type of error by looking at the error code, and comparing it to the enum present in SOSError.h
-    NSUInteger errorCode = [error code];
-    NSLog(@"Something went wrong: %@, SOSError code: %lu", description, (unsigned long)errorCode);
+    switch(reason) {
+        case SOSStopReasonAgentDisconnected: {
+            description = @"The agent has ended the session";
+            break;
+        }
+        case SOSStopReasonUserDisconnected: {
+            description = @"You have ended your sos session";
+            break;
+        }
+
+        default: {
+            break;
+        }
+    }
+
+    if (!description) {
+        return;
+    }
+
+    if ([configuredViewControllers[@"Alerts"] boolValue]) {
+        // Use a custom class to handle alerts.
+        SCLAlertView *alertView = [[SCLAlertView alloc] initWithNewWindow];
+        [alertView showInfo:@"SOS" subTitle:description closeButtonTitle:@"dismiss" duration:0.0f];
+
+    } else {
+        // Use generic alert controller
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"SOS" message:description delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+    }
+}
+
+- (void)handleError:(NSError *)error {
+    if (!error) {
+        return;
+    }
+
+    NSString *description = nil;
+
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"SOSSettings" ofType:@"plist"];
+    NSDictionary *settings = [[NSDictionary alloc] initWithContentsOfFile:path];
+    NSDictionary *configuredViewControllers = settings[@"Custom ViewControllers"];
 
     // You can do conditional error messages based on the type of error. Here we'll handle the No Agents Available error and display a custom message
-    switch (errorCode) {
+    // if there is no error (it's nil) then these statements should be implicitly ignored.
+    switch (error.code) {
         case SOSNoAgentsAvailableError: {
             description = @"Hey it looks like there are no agents available. Please try again later!";
+            break;
+        }
+        case SOSInsufficientNetworkError: {
+            description = @"Your network connection is not strong enough to handle an SOS session right now";
             break;
         }
         default: {
