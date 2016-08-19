@@ -31,8 +31,7 @@
 #import "AppDelegate.h"
 #import <SCLAlertView-Objective-C/SCLAlertView.h>
 
-#import <SOS/SOS.h>
-#import <SOS/SOSError.h>
+@import ServiceSOS;
 
 @interface AppDelegate() <SOSDelegate>
 @end

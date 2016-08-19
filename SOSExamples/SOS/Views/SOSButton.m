@@ -35,7 +35,7 @@
 
 #import <SCLAlertView-Objective-C/SCLAlertView.h>
 
-#import <SOS/SOS.h>
+@import ServiceSOS;
 
 @implementation SOSButton
 

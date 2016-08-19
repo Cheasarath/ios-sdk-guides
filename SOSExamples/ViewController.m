@@ -29,7 +29,6 @@
  */
 
 #import "ViewController.h"
-@import ServiceCloudKit;
 
 @interface ViewController ()
 

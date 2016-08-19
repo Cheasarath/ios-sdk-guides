@@ -29,7 +29,7 @@
  */
 
 #import <UIKit/UIKit.h>
-#import <SOS/SOS.h>
+@import ServiceSOS;
 
 // This subclass is an easy way to wire in SOS into your application.
 // If you look at the Main.storyboard you will notice that buttons which trigger an SOS session

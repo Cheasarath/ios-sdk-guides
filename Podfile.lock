@@ -11,25 +11,21 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.5.7):
     - MMDrawerController/Core
-  - OpenTok (2.8.3)
   - SCLAlertView-Objective-C (1.0.3)
-  - ServiceCloudKit (1.0.0)
-  - SOS (3.0.0):
-    - OpenTok (= 2.8.3)
-    - ServiceCloudKit (= 1.0.0)
+  - ServiceSDK (1.1.0):
+    - ServiceSDK/All (= 1.1.0)
+  - ServiceSDK/All (1.1.0)
 
 DEPENDENCIES:
   - MMDrawerController (~> 0.5.7)
   - SCLAlertView-Objective-C (= 1.0.3)
-  - SOS (= 3.0.0)
+  - ServiceSDK (= 1.1.0)
 
 SPEC CHECKSUMS:
   MMDrawerController: 7a4cf8e25596bf2434e03ce50d22a8608ddee6a1
-  OpenTok: ad14a09847ba5d6485820f5946484b749de944d7
   SCLAlertView-Objective-C: e83376218b431109dc5403adc63f8e9787db7b74
-  ServiceCloudKit: c81c4c510593ab17c57be8c53ea3e3d5929ce2d2
-  SOS: 663db36ad1bf1ab72561ca30ee594b8be8da3e60
+  ServiceSDK: 4f868db059a5031d14c7ce9fcd5eb3591fb899e2
 
-PODFILE CHECKSUM: dae8e3bd84cf7e3225e1305e853521ac281accbb
+PODFILE CHECKSUM: d36e5cd1f3c95c64d0667084346b7309c17e5f4a
 
 COCOAPODS: 1.0.1
