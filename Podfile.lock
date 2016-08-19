@@ -12,20 +12,18 @@ PODS:
   - MMDrawerController/Subclass (0.5.7):
     - MMDrawerController/Core
   - SCLAlertView-Objective-C (1.0.3)
-  - ServiceSDK (1.1.0):
-    - ServiceSDK/All (= 1.1.0)
-  - ServiceSDK/All (1.1.0)
+  - ServiceSDK/SOS (1.1.0)
 
 DEPENDENCIES:
   - MMDrawerController (~> 0.5.7)
   - SCLAlertView-Objective-C (= 1.0.3)
-  - ServiceSDK (= 1.1.0)
+  - ServiceSDK/SOS (= 1.1.0)
 
 SPEC CHECKSUMS:
   MMDrawerController: 7a4cf8e25596bf2434e03ce50d22a8608ddee6a1
   SCLAlertView-Objective-C: e83376218b431109dc5403adc63f8e9787db7b74
   ServiceSDK: 4f868db059a5031d14c7ce9fcd5eb3591fb899e2
 
-PODFILE CHECKSUM: d36e5cd1f3c95c64d0667084346b7309c17e5f4a
+PODFILE CHECKSUM: f0eb5d3d02f34d587bb372db3485e5aaa7d7f423
 
 COCOAPODS: 1.0.1
